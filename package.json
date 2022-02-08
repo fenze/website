@@ -1,0 +1,14 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fenze/website.git"
+  },
+  "author": "fenze",
+  "homepage": "https://fenze.dev",
+  "dependencies": {
+    "firebase": "^9.6.6"
+  }
+}
