@@ -1,7 +1,10 @@
-$(setTimeout(() => $('.loader').remove(), 400))
+$(setTimeout(() => {
+  $('.loader').remove()
+  document.body.style.overflow = 'visible'
+}, 400))
 
 const search = () => {
-  input = document.querySelector('#box > input').value.toUpperCase()
+  input = document.querySelector('#search > input').value.toUpperCase()
   menu = document.querySelectorAll('.search-element')
 
   for (element of menu)
@@ -13,7 +16,7 @@ const search = () => {
     }
 }
 
-mbtn = $('.m-btn')
+mbtn = $('#menu')
 nav = $('nav')
 mbtn.click(() => {
   if (nav.css('display') == "none") {
@@ -21,12 +24,14 @@ mbtn.click(() => {
     mbtn.addClass('fa-xmark')
     mbtn.css('color', '#FEC8A7')
     nav.css('display', 'flex')
-    input=$('#box > input').val('')
+    document.body.style.overflow = 'hidden'
+    input=$('#search > input').val('')
     input.focus()
     search()
   } else {
     mbtn.removeClass('fa-xmark')
     mbtn.addClass('fa-bars')
+    document.body.style.overflow = 'visible'
     mbtn.css('color', '#CBC7FC')
     nav.hide()
   }
@@ -44,4 +49,4 @@ $(document).on('keyup', e => {
         }
 })
 
-$('#box > input').on("keyup", () => search())
+$('#search > input').on("keyup", () => search())

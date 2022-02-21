@@ -5,12 +5,13 @@
     <title> About me </title>
     <link rel='stylesheet' href='stylesheets/style.css'>
     <link rel='icon' href='images/icon.png'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src='https://kit.fontawesome.com/246702ad8c.js' crossorigin='anonymous'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src='scripts/loader.js'></script>
   </head>
   <body>
-    <a class="m-btn fa-solid fa-bars-staggered"></a>
+    <a id='menu' class="fa-solid fa-bars-staggered"></a>
 
     <div class='loader'>
       <h1>fenze</hi>
@@ -18,22 +19,29 @@
 
     <nav>
       <div id='box'>
-        <input placeholder='Search'>
+        <div id='search'>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input placeholder='Search'>
+        </div>
         <p> Navigation </p>
         <a class='search-element' href='#home' onclick='mbtn.click()'>
-          <i class="fa-solid fa-house"></i>Home</a>
+          <i class="fa-solid fa-house"></i> Home </a>
         <a class='search-element' href='#offer' onclick='mbtn.click()'>
-          <i class="fa-solid fa-bag-shopping"></i>Offer</a>
+          <i class="fa-solid fa-bag-shopping"></i> Offer</a>
+
+        <a class='search-element' href='#offer'>
+          <i class="fa-solid fa-people-group"></i> Team </a>
+
         <p> Social Media </p>
         <a class='search-element' href='https://github.com/fenze'>
           <i class="fa-brands fa-github"></i>Github</a>
         <a class='search-element' href='https://github.com/fenze'>
           <i class="fa-brands fa-twitter"></i>Twitter</a>
         <a class='search-element' href='https://www.linkedin.com/in/kacper-fiedorowicz-9ba8b522a/'>
-          <i class="fa-brands fa-linkedin-in"></i> Linkedin</a>
+          <i class="fa-brands fa-linkedin-in"></i>Linkedin</a>
         <p class='search-categories'> Other </p>
         <a class='search-element' href='https://github.com/fenze?tab=repositories'>
-          <i class="fa-solid fa-code-branch"></i> Repositories</a>
+          <i class="fa-solid fa-code-branch"></i>Repositories</a>
         <a class='search-element org' href='https://github.com/mini-rose'>
           <i class="fa-solid fa-user-group"></i>Organization</a>
         <a class='search-element' href='mailto:contact@fenze.dev'>
@@ -47,7 +55,7 @@
         <h1> fenze </h1>
         <p>Hi, I’m Kacper and I’m a Software Engineer with over 4 years of coding experience.
            I’m particularly interested in data modelling, system design, distributed systems,
-           cloud computing, and backend development. <a href="#about">See more</a>.</p>
+           cloud computing, and backend development. <a href="#offer">See more</a>.</p>
       </div>
     </section>
     <section id='offer'>
