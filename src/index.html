@@ -5,9 +5,19 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<title> fenze: About me </title>
 		<link rel='stylesheet' href='style.css'>
-		<script src='script.js'></script>
+		<script src="https://kit.fontawesome.com/246702ad8c.js" crossorigin="anonymous"></script>
+		<script defer src='script.js'></script>
 	</head>
 	<body>
+		<div id='menu' tabindex="-1">
+			<input id='search-menu' onkeyup="search()" placeholder='Search or jump to...'>
+			<p class='search-categories'> Pages </p>
+			<a id='repos' class='search-element' href='https://github.com/fenze?tab=repositories'>
+				<i class="fa-solid fa-code-branch"></i> Repositories</a>
+			<a id='repos' class='search-element'><i class="fa-solid fa-user"></i> Contact</a>
+			<a id='repos' class='search-element' href='mailto:contact@fenze.dev'>
+				<i class="fa-solid fa-envelope"></i> Send mail</a>
+		</div>
 		<section>
 			<img id='avatar' src='https://avatars.githubusercontent.com/u/93622468'/>
 			<div>
@@ -22,5 +32,5 @@
 				</div>
 			</div>
 		</section>
-		<div id="loader"></div>
+		<div id="loader">
 </html>
