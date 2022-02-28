@@ -98,14 +98,13 @@ nav
       width: 20rem
       height: 20rem
       background: transparentize(#fff, 0.9)
-
-      border-radius: 15px
+      border-radius: 1rem
       h1
         font-size: 3em
         text-align: center
       .category
+        text-align: center
         color: #8B949E
-        padding-left: 2rem
         font-size: .9em
         font-weight: bold
         margin: 0
@@ -125,18 +124,17 @@ nav
         font-weight: bold
         height: 3rem
         border: none
-        border-radius: 15px
+        border-radius: 1rem
         &:hover
           cursor: pointer
           background: #777
 
 .loader
   @include center
-  top: 0
-  left: 0
   width: 100vw
   height: 100vh
-  position: absolute
+  position: fixed
+  overflow: hidden
   background: radial-gradient(circle, rgb(20,20,75) -40%, rgb(0,0,0) 80%)
   z-index: 99
   h1
@@ -198,8 +196,8 @@ section
     #box
       width: 50vw
       height: 50vw
-    a
-      font-size: 1.2em
+      a
+        font-size: 1.2em
 
   #offer
     #box
@@ -208,17 +206,19 @@ section
         height: 50vw
         h1
           font-size: 5em
+          margin: 3rem 0
         .category
           font-size: 1.5em
         .text
           font-size: 3.5em
+          margin: 1rem 0
         button
-          height: 4rem
+          height: 5rem
           font-size: 2em
 
   #home
     img
-      width: 500px
+      width: 80%
     div
       margin-top: -4rem
       height: auto

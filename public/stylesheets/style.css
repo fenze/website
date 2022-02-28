@@ -75,13 +75,13 @@ nav {
     width: 20rem;
     height: 20rem;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px; }
+    border-radius: 1rem; }
     #offer #box div h1 {
       font-size: 3em;
       text-align: center; }
     #offer #box div .category {
+      text-align: center;
       color: #8B949E;
-      padding-left: 2rem;
       font-size: .9em;
       font-weight: bold;
       margin: 0; }
@@ -101,7 +101,7 @@ nav {
       font-weight: bold;
       height: 3rem;
       border: none;
-      border-radius: 15px; }
+      border-radius: 1rem; }
       #offer #box div button:hover {
         cursor: pointer;
         background: #777; }
@@ -110,11 +110,10 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   background: radial-gradient(circle, #14144b -40%, black 80%);
   z-index: 99; }
   .loader h1 {
@@ -173,22 +172,24 @@ section {
   nav #box {
     width: 50vw;
     height: 50vw; }
-  nav a {
-    font-size: 1.2em; }
+    nav #box a {
+      font-size: 1.2em; }
   #offer #box div {
     width: 50vw;
     height: 50vw; }
     #offer #box div h1 {
-      font-size: 5em; }
+      font-size: 5em;
+      margin: 3rem 0; }
     #offer #box div .category {
       font-size: 1.5em; }
     #offer #box div .text {
-      font-size: 3.5em; }
+      font-size: 3.5em;
+      margin: 1rem 0; }
     #offer #box div button {
-      height: 4rem;
+      height: 5rem;
       font-size: 2em; }
   #home img {
-    width: 500px; }
+    width: 80%; }
   #home div {
     margin-top: -4rem;
     height: auto;
