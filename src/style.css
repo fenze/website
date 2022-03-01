@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: #000;
 	margin: 0;
@@ -5,30 +9,63 @@ body {
 	color: white;
 }
 
+.menubtn {
+	font-size: 2em;
+	margin: 1em;
+	position: fixed;
+}
+
 #loader {
-	position: absolute;
+	position: fixed;
 	background: #000;
 	height: 100vh;
 	width: 100vw;
 	top: 0;
-}
-
-section {
-	height: 90vh;
-	width: 70%;
-	margin: auto;
+	z-index: 98;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+#loader > h1 {
+	font-size: 8em;
+	animation: typewriter 1s steps(7) infinite alternate, blink 500ms steps(13) infinite normal;
+	overflow: hidden;
+	border-right: 5px solid white;
+}
+
+@keyframes typewriter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 24rem;
+        }
+}
+@keyframes blink {
+	from {
+		border-color: white;
+	}
+	to {
+		border-color: transparent;
+	}
+}
+
+section {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#main > div {
+	width: 50%;
+}
+
 h1 {
 	font-size: 15em;
 	margin: 0;
-}
-
-h2 {
-	margin: -1em 0 .1em 1em;
 }
 
 p {
@@ -40,7 +77,6 @@ p {
 }
 
 #avatar {
-	width: 20em;
 	margin-right: .8em;
 	border-radius: 100%;
 }
@@ -52,29 +88,46 @@ p {
 	height: 40vh;
 	width: 30%;
 	background: rgba(0, 0, 0, .7);
-	border: solid 1px #30363D;
+	border: solid 1px #5e5e5e;
 	border-radius: 15px;
 	backdrop-filter: blur(40px);
 	z-index: 99;
 	display: none;
 }
 
-#search-menu {
+#menu:focus {
+	outline: none;
+}
+
+#searchbar {
 	background: none;
 	border: none;
 	color: #fff;
 	width: calc(100% - 2rem);
 	height: 3rem;
 	padding: 0 1rem;
-	border-bottom: solid 1px #30363D;
+	border-bottom: solid 1px #5e5e5e;
+	border-radius: 15px 0 0 0;
+}
+
+#searchbar:focus,
+#searchbar:focus + #search-close {
+	background: rgba(50, 50, 50, .5);
+	outline: none;
+}
+
+#menu-entries {
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .search-element {
-	width: calc(100% - 2rem);
+	width: calc(100% - 3rem);
 	display: block;
-	padding: 0 1rem;
+	padding: 0 1.5rem;
 	color: white;
 	text-decoration: none;
+	border: solid 1px rgba(0, 0, 0, 0);
 }
 
 .search-element > * {
@@ -84,66 +137,88 @@ p {
 .search-categories {
 	color: #8B949E;
 	font-size: .9em;
-	padding: .4rem 1.5rem;
+	padding: 0rem 0 0 1rem;
 }
 
-#search-menu:focus {
-	background: rgba(50, 50, 50, .5);
-	border-radius: 15px 15px 0 0;
+.search-element:hover,
+.search-element:focus {
 	outline: none;
+	background: rgba(50, 50, 50, .5);
+	border-bottom: solid 1px #5e5e5e;
+	border-top: solid 1px #5e5e5e;
+}
+
+.grid-box {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
 }
 
 body::-webkit-scrollbar {
-  width: 10px;               /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar:hover {
-  width: 15px;               /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-  background: #000;        /* color of the tracking area */
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: white;    /* color of the scroll thumb */
+	display: none;
 }
 
 @media all and (max-width: 1400px) {
 	section {
 		flex-direction: column;
-		width: 90%;
-		margin: auto;
-		justify-content: flex-start;
+		height: 100vh;
+		width: 100%;
+		justify-content: center;
 		align-items: center;
 	}
 
 	#avatar {
-		width: 50%;
-		margin: 50% auto 0 auto;
+		width: 300px;
 		border-radius: 200px;
+		margin-bottom: 0;
+	}
+
+	#menu-entries {
+		height: calc(100% - 3rem);
+	}
+
+	#menu {
+		width: 80%;
+		max-width: 500px;
+		height: auto;
+		max-height: 300px;
+		margin: auto;
 	}
 
 	h1 {
-		width: 60%;
-		margin: 0 auto;
+		width: 70%;
+		margin: 0;
 		font-size: 5em;
-	}
-
-	h2 {
-		width: 60%;
-		margin: -.7rem auto .5rem auto;
 	}
 
 	p {
 		font-size: 1em;
-		padding: 0;
-		margin: 0;
+		width: 100%;
+	}
+
+	#searchbar {
+		width: calc(100% - 2rem);
+		border-radius: 15px 15px 0 0;
+	}
+
+	#search-close {
+		display: none;
+	}
+
+	.menubtn {
+		font-size: 2em;
+		position: fixed;
+		bottom: 1rem;
+		right: 1rem;
 	}
 
 	#about-text {
-		margin: 0 auto;
-		width: 60%;
+		margin: -1rem 0 0 -1.5rem;
+		width: 100%;
 		text-align: left;
 	}
+
+	body::-webkit-scrollbar {
+		width: 0;
+	}
+
 }

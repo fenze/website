@@ -9,20 +9,28 @@
 		<script defer src='script.js'></script>
 	</head>
 	<body>
+		<i class="fa-solid fa-bars menubtn" onclick='toggle_search()'></i>
 		<div id='menu' tabindex="-1">
-			<input id='search-menu' onkeyup="search()" placeholder='Search or jump to...'>
-			<p class='search-categories'> Pages </p>
-			<a id='repos' class='search-element' href='https://github.com/fenze?tab=repositories'>
-				<i class="fa-solid fa-code-branch"></i> Repositories</a>
-			<a id='repos' class='search-element'><i class="fa-solid fa-user"></i> Contact</a>
-			<a id='repos' class='search-element' href='mailto:contact@fenze.dev'>
-				<i class="fa-solid fa-envelope"></i> Send mail</a>
+			<input id='searchbar' onkeyup="search()" placeholder='Jump to...'>
+			<div id='menu-entries'>
+				<p class='search-categories'> Navigation </p>
+				<a class='search-element' href='#main'>
+					<i class="fa-solid fa-house"></i>Home</a>
+				<a class='search-element' href='#about'>
+					<i class="fa-solid fa-user"></i>About</a>
+				<a class='search-element' href='#languages'>
+					<i class="fa-solid fa-code"></i>Languages</a>
+				<p class='search-categories'> Other </p>
+				<a class='search-element' href='https://github.com/fenze?tab=repositories'>
+					<i class="fa-solid fa-code-branch"></i>Repositories</a>
+				<a class='search-element' href='mailto:contact@fenze.dev'>
+					<i class="fa-solid fa-envelope"></i>Send mail</a><br>
+			</div>
 		</div>
-		<section>
+		<section id='main'>
 			<img id='avatar' src='https://avatars.githubusercontent.com/u/93622468'/>
 			<div>
 				<h1>fenze</h1>
-				<h2>Backend developer</h2>
 				<div id='about-text'>
 					<p>
 					Hi, I’m Kacper and I’m a Software Engineer with over 4 years of coding experience.
@@ -32,5 +40,5 @@
 				</div>
 			</div>
 		</section>
-		<div id="loader">
+		<div id="loader"><h1> fenze </h1></div>
 </html>

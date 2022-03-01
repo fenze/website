@@ -1,11 +1,11 @@
 window.addEventListener("load", () => {
 	setTimeout(() => {
 		document.querySelector("#loader").remove()
-	}, 500);
+	}, 1000);
 })
 
 const search = () => {
-	input = document.querySelector("#search-menu").value.toUpperCase()
+	input = document.querySelector("#searchbar").value.toUpperCase()
 	menu = document.querySelectorAll(".search-element")
 
 	for (entry of menu) {
@@ -16,27 +16,39 @@ const search = () => {
 	}
 }
 
-const hide_search = () => {
+const hide_search = (delay) => {
+	setTimeout(() => {
 			document.querySelector("#menu").style.display = "none"
+			document.querySelector(".menubtn").classList.remove("fa-xmark")
+			document.querySelector(".menubtn").classList.add("fa-bars")
+	}, delay);
 }
 
 const show_search = () => {
-			document.querySelector("#menu").style.display = "block"
-			document.querySelector("#search-menu").focus()
+	document.querySelector("#menu").style.display = "block"
+	document.querySelector("#searchbar").focus()
+	document.querySelector(".menubtn").classList.remove("fa-bars")
+	document.querySelector(".menubtn").classList.add("fa-xmark")
 }
 
-window.addEventListener("keyup", function(event) {
-    if (event.key === "/")
+const toggle_search = () => {
+	menu = document.querySelector("#menu")
+	if (menu.style.display == "block")
+		hide_search()
+	else
+		show_search()
+}
+
+window.addEventListener("keyup", e => {
+    if (e.key === "/")
 			show_search()
 
-		if (event.keyCode === 27 || event.ctrlKey && event.key === "c")
+		if (e.keyCode === 27 || (navigator.platform.match("Mac")? e.metaKey: e.ctrlKey) && e.key === "c")
 			hide_search()
 
-		if (event.keyCode === 13) {
-			menu = document.querySelectorAll(".search-element")
-			for (entry of menu) {
-				if (entry.style.display != "none")
-					window.open(entry.getAttribute("href"))
-			}
-		}
+		if (e.keyCode === 13)
+			for (entry of (document.querySelectorAll(".search-element")))
+				if (entry.style.display != "none") {
+					window.open(entry.getAttribute("href"), name='_self')
+				}
 })
