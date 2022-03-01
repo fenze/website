@@ -29,7 +29,8 @@ body {
 
 #loader > h1 {
 	font-size: 7vw;
-	animation: typewriter 500ms steps(7) infinite alternate, blink 500ms steps(3) infinite normal;
+	width: 17.5vw;
+	animation: typewriter 500ms steps(7) alternate, blink 500ms steps(20) infinite normal;
 	overflow: hidden;
 	border-right: .5vw solid white;
 }
@@ -39,9 +40,10 @@ body {
 		width: 0;
 	}
 	to {
-		width: 20.5vw;
+		width: 17.5vw;
 	}
 }
+
 @keyframes blink {
 	from {
 		border-color: white;
@@ -93,6 +95,7 @@ p {
 	backdrop-filter: blur(40px);
 	z-index: 99;
 	display: none;
+	padding-bottom: 2rem;
 }
 
 #menu:focus {
@@ -167,14 +170,13 @@ body::-webkit-scrollbar {
 	}
 
 	#avatar {
-		width: 300px;
+		width: 50vw;
 		border-radius: 200px;
 		margin-bottom: 0;
 	}
 
 	#menu-entries {
 		height: 100%;
-		max-height: 280px;
 	}
 
 	#menu {
@@ -183,7 +185,6 @@ body::-webkit-scrollbar {
 		height: auto;
 		max-height: 300px;
 		margin: auto;
-		padding-bottom: 2rem;
 	}
 
 	h1 {
