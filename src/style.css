@@ -28,10 +28,10 @@ body {
 }
 
 #loader > h1 {
-	font-size: 8em;
-	animation: typewriter 1s steps(7) infinite alternate, blink 500ms steps(13) infinite normal;
+	font-size: 7vw;
+	animation: typewriter 500ms steps(7) infinite alternate, blink 500ms steps(3) infinite normal;
 	overflow: hidden;
-	border-right: 5px solid white;
+	border-right: .5vw solid white;
 }
 
 @keyframes typewriter {
@@ -39,7 +39,7 @@ body {
 		width: 0;
 	}
 	to {
-		width: 24rem;
+		width: 20.5vw;
 	}
 }
 @keyframes blink {
@@ -47,7 +47,7 @@ body {
 		border-color: white;
 	}
 	to {
-		border-color: transparent;
+		border-color: black;
 	}
 }
 
@@ -174,7 +174,7 @@ body::-webkit-scrollbar {
 
 	#menu-entries {
 		height: 100%;
-		max-height: 300px;
+		max-height: 280px;
 	}
 
 	#menu {
@@ -183,7 +183,7 @@ body::-webkit-scrollbar {
 		height: auto;
 		max-height: 300px;
 		margin: auto;
-		padding-bottom: 1em;
+		padding-bottom: 2rem;
 	}
 
 	h1 {
