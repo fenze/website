@@ -10,19 +10,25 @@
 	</head>
 	<body>
 		<i class="fa-solid fa-bars menubtn" onclick='toggle_search()'></i>
-		<div id='menu' tabindex="-1">
+		<div id='menu' tabindex="-1" onfocusout="hide_search(250)">
 			<input id='searchbar' onkeyup="search()" placeholder='Jump to...'>
 			<div id='menu-entries'>
 				<p class='search-categories'> Navigation </p>
+
 				<a class='search-element' href='#main'>
 					<i class="fa-solid fa-house"></i>Home</a>
+
 				<a class='search-element' href='#about'>
 					<i class="fa-solid fa-user"></i>About</a>
+
 				<a class='search-element' href='#languages'>
 					<i class="fa-solid fa-code"></i>Languages</a>
+
 				<p class='search-categories'> Other </p>
+
 				<a class='search-element' href='https://github.com/fenze?tab=repositories'>
 					<i class="fa-solid fa-code-branch"></i>Repositories</a>
+
 				<a class='search-element' href='mailto:contact@fenze.dev'>
 					<i class="fa-solid fa-envelope"></i>Send mail</a><br>
 			</div>
@@ -30,7 +36,7 @@
 		<section id='main'>
 			<img id='avatar' src='https://avatars.githubusercontent.com/u/93622468'/>
 			<div>
-				<h1>fenze</h1>
+				<h1 id='nickname'>fenze</h1>
 				<div id='about-text'>
 					<p>
 					Hi, I’m Kacper and I’m a Software Engineer with over 4 years of coding experience.

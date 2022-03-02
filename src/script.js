@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
 	setTimeout(() => {
 		document.querySelector("#loader").remove()
-	}, 1000);
+	}, 500);
 })
 
 const search = () => {
@@ -40,15 +40,15 @@ const toggle_search = () => {
 }
 
 window.addEventListener("keyup", e => {
-    if (e.key === "/")
+		if (e.key === "/")
 			show_search()
 
-		if (e.keyCode === 27 || (navigator.platform.match("Mac")? e.metaKey: e.ctrlKey) && e.key === "c")
+		if (e.keyCode === 27)
 			hide_search()
 
 		if (e.keyCode === 13)
-			for (entry of (document.querySelectorAll(".search-element")))
-				if (entry.style.display != "none") {
+			for (entry of document.querySelectorAll(".search-element"))
+				if (entry.style.display != "none")
 					window.open(entry.getAttribute("href"), name='_self')
-				}
+
 })
