@@ -88,7 +88,8 @@ section {
 
 #menu {
 	background: rgba(0, 0, 0, .7);
-	height: 40vh; width: 30%;
+	max-height: 400px;
+	width: 30%;
 
 	position: fixed;
 	top: 50%; left: 50%;
@@ -99,7 +100,6 @@ section {
 	display: none;
 	border: solid 1px #5e5e5e;
 	border-radius: 15px;
-	padding-bottom: 2rem;
 }
 
 #menu:focus {
@@ -126,7 +126,7 @@ section {
 #menu-entries {
 	overflow-x: hidden;
 	overflow-y: auto;
-	max-height: 38vh;
+	max-height: 37.5vh;
 }
 
 .search-element {
@@ -169,6 +169,10 @@ section {
 		min-width: 300px;
 		max-height: 80vh;
 		margin: auto;
+	}
+
+	#menu-entries {
+		max-height: 450px;
 	}
 
 	#nickname {
