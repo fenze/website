@@ -105,8 +105,9 @@ section {
 	border: none;
 	color: #fff;
 	width: calc(100% - 2rem);
-	padding: 1rem;
 	border-bottom: solid 1px #5e5e5e;
+	padding: .5rem 1rem .3rem 1rem;
+	line-height: 36px;
 	border-radius: 15px 15px 0 0;
 }
 
@@ -115,7 +116,9 @@ section {
 	background: rgba(50, 50, 50, .5);
 }
 
-#menu-entries { overflow-y: auto; }
+#menu-entries {
+	overflow-y: auto;
+}
 
 .search-element {
 	width: calc(100% - 3rem - 2px);
@@ -148,6 +151,7 @@ section {
 	#menu {
 		width: 90%;
 		min-width: 300px;
+		max-width: 500px;
 		max-height: 90vh;
 		margin: auto;
 	}

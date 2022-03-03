@@ -10,8 +10,8 @@
 	</head>
 	<body>
 		<i class="fa-solid fa-bars menubtn" onclick='toggle_search()'></i>
-		<div id='menu'>
-			<input id='searchbar' onkeyup="search()" placeholder='Jump to...'>
+		<div id='menu' onfocusout="hide_search(250)">
+			<input id='searchbar' onkeyup="search()" placeholder='Search'>
 			<div id='menu-entries'>
 				<p class='search-categories'> Navigation </p>
 
