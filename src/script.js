@@ -1,19 +1,18 @@
 window.addEventListener("load", () => {
 	setTimeout(() => {
 		document.querySelector("#loader").remove()
-	}, 500);
+	}, 400);
 })
 
 const search = () => {
 	input = document.querySelector("#searchbar").value.toUpperCase()
 	menu = document.querySelectorAll(".search-element")
 
-	for (entry of menu) {
-		if (entry.innerHTML.toUpperCase().indexOf(input) == -1)
-			entry.style.display = "none"
-		else
-			entry.style.display = "";
-	}
+	for (e of menu)
+		if (e.innerHTML.toUpperCase().indexOf(input) == -1)
+			e.style.display = "none"
+
+		else e.style.display = ""
 }
 
 const hide_search = (delay) => {

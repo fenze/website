@@ -9,7 +9,7 @@ html { scroll-behavior: smooth; }
 }
 
 body {
-	background: #000;
+	background: radial-gradient(circle, rgb(0,0,0) -50%, rgb(20,20,75) 10%, rgb(0,0,0) 100%);
 	margin: 0;
 	font-family: system-ui, -apple-system,
 							 BlinkMacSystemFont, 'Segoe UI',
@@ -45,7 +45,7 @@ body {
 	border-right: .5vw solid;
 	animation:
 		typewriter 300ms steps(10),
-		blink 220ms steps(20) infinite;
+		blink 500ms steps(20) infinite;
 }
 
 @keyframes typewriter {
@@ -63,28 +63,29 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 5%;
 }
 
 #main > div {
-	width: 50%;
+	width: 30%;
+	max-width: 350px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: left;
 }
 
 #nickname {
 	font-size: 5em;
 	margin: 0;
-	width: 60%;
+	width: 30%;
 }
 
-#about-text { width: 60%; }
 
-#avatar { border-radius: 100%; max-width: 300px; }
+#avatar { border-radius: 100%; max-width: 350px; max-height: 30vh; }
 
 /* Search menu */
 #menu {
-	background: rgba(0, 0, 0, .7);
+	background: rgba(0, 0, 0, .75);
 	max-height: 400px;
 	width: 30%;
 
@@ -133,6 +134,7 @@ section {
 	padding: 0rem 0 0 1rem;
 }
 
+.search-element-search,
 .search-element:hover,
 .search-element:focus {
 	background: rgba(50, 50, 50, .5);
@@ -144,14 +146,16 @@ section {
 	section { flex-direction: column; }
 
 	#menu {
+		width: 90%;
 		min-width: 300px;
-		max-height: 80vh;
+		max-height: 90vh;
 		margin: auto;
 	}
 
+	#main > div { align-items: center; }
 	#nickname,
 	#about-text,
-	#menu-entries { min-width: 200px; }
+	#menu-entries { min-width: 200px;}
 
 	.search-element {
 		padding: .5rem 1.5rem;
