@@ -9,7 +9,7 @@ html { scroll-behavior: smooth; }
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0;
 }
 
 body {
@@ -54,7 +54,7 @@ body {
 
 @keyframes typewriter {
 	from { width: 0; }
-	to { width: 18.5vw; }
+	to { width: 19vw; }
 }
 
 @keyframes blink {
@@ -110,7 +110,7 @@ section {
 	color: #fff;
 	width: calc(100% - 2rem);
 	border-bottom: solid 1px #5e5e5e;
-	padding: .5rem 1rem .3rem 1rem;
+	padding: .4rem 1rem .3rem 1rem;
 	line-height: 36px;
 	border-radius: 15px 15px 0 0;
 }
@@ -122,7 +122,7 @@ section {
 
 #menu-entries {
 	overflow-y: auto;
-	max-height: calc(400px - 3rem);
+	max-height: calc(400px - 4rem);
 }
 
 .search-element {
