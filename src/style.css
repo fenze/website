@@ -8,6 +8,10 @@ html { scroll-behavior: smooth; }
 	outline: none;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
 body {
 	background: radial-gradient(circle, rgb(0,0,0) -50%, rgb(20,20,75) 10%, rgb(0,0,0) 100%);
 	margin: 0;
@@ -75,7 +79,7 @@ section {
 }
 
 #nickname {
-	font-size: 5em;
+	font-size: 7em;
 	margin: 0;
 	width: 30%;
 }
@@ -118,6 +122,7 @@ section {
 
 #menu-entries {
 	overflow-y: auto;
+	max-height: calc(400px - 3rem);
 }
 
 .search-element {
