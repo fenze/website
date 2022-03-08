@@ -153,12 +153,20 @@ section {
 @media (max-width: 1300px) {
 	section { flex-direction: column; }
 
+	body {
+		background: #000;
+	}
+
 	#menu {
 		width: 90%;
 		min-width: 300px;
 		max-width: 500px;
 		max-height: 90vh;
 		margin: auto;
+	}
+
+	#nickname {
+		font-size: 5em;
 	}
 
 	#main > div { align-items: center; }
