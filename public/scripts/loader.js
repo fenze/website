@@ -32,7 +32,6 @@ mbtn.click(() => {
   }
 })
 
-
 $(document).on('keyup', e => {
   if (e.keyCode === 27 || e.keyCode === 191)
     mbtn.click()
