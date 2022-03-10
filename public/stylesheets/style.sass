@@ -1,0 +1,72 @@
+$peach: #FEC8A7
+$mimosa: #FCECA5
+$seafoam: #B5EECB
+$periwinkle: #CBC7FC
+
+
+@mixin center
+  display: flex
+  align-items: center
+  justify-content: center
+
+@mixin link
+  font-weight: bold
+  text-decoration: none
+  color: $peach
+
+body
+  margin: 0
+  color: $periwinkle
+  background: radial-gradient(circle, rgb(20,20,75) -40%, rgb(0,0,0) 80%)
+  background-size: cover
+  background-repeat: no-repeat
+
+  i
+    font-size: 3rem
+    margin: 3rem
+    position: fixed
+
+.loader
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  position: absolute
+
+nav
+	width: 30%
+  backdrop-filter: blur(40px)
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 99
+
+section
+  @include center
+  height: 100vh
+  width: 100vw
+
+.home
+  img
+    max-width: 350px
+
+  div
+    display: flex
+    flex-direction: column
+    align-items: left
+    height: 300px
+    width: 290px
+
+    p
+      text-align: justify
+
+    a
+      @include link
+
+    h1, p
+      margin: 0
+
+    h1
+      font-size: 7em
+      font-family: BlinkMacSystemFont

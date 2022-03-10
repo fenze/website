@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  color: #CBC7FC;
+  background: radial-gradient(circle, #14144b -40%, black 80%);
+  background-size: cover;
+  background-repeat: no-repeat; }
+  body i {
+    font-size: 3rem;
+    margin: 3rem;
+    position: fixed; }
+
+.loader {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute; }
+
+nav {
+  width: 30%;
+    width-backdrop-filter: blur(40px);
+    width-position: fixed;
+    width-top: 50%;
+    width-left: 50%;
+    width-transform: translate(-50%, -50%);
+    width-z-index: 99; }
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw; }
+
+.home img {
+  max-width: 350px; }
+
+.home div {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  height: 300px;
+  width: 290px; }
+  .home div p {
+    text-align: justify; }
+  .home div a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #FEC8A7; }
+    .home div a:hover {
+      text-decoration: 'underline wavy'; }
+  .home div h1, .home div p {
+    margin: 0; }
+  .home div h1 {
+    font-size: 7em;
+    font-family: BlinkMacSystemFont; }
