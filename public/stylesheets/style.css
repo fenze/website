@@ -18,12 +18,12 @@ body {
 
 nav {
   width: 30%;
-    width-backdrop-filter: blur(40px);
-    width-position: fixed;
-    width-top: 50%;
-    width-left: 50%;
-    width-transform: translate(-50%, -50%);
-    width-z-index: 99; }
+  backdrop-filter: blur(40px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99; }
 
 section {
   display: flex;
@@ -47,8 +47,6 @@ section {
     font-weight: bold;
     text-decoration: none;
     color: #FEC8A7; }
-    .home div a:hover {
-      text-decoration: 'underline wavy'; }
   .home div h1, .home div p {
     margin: 0; }
   .home div h1 {
