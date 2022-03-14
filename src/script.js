@@ -1,2 +1,1 @@
-$('body > i').click(() => {
-})
+console.log("wqf")
