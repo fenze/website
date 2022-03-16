@@ -13,52 +13,73 @@ $periwinkle:  #CBC7FC
   text-decoration: none
   color: $peach
 
+@mixin drag-off
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+
+@mixin select-off
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
 body
   margin: 0
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 'Droid Sans', sans-serif
-
   color: $periwinkle
   background: radial-gradient(circle, rgb(20,20,75) -40%, rgb(0,0,0) 80%)
   background-size: cover
   background-repeat: no-repeat
 
 .m-btn
-  font-size: 3rem
+  font-size: 3em
   margin: 3rem
   position: fixed
+  z-index: 99
 
 nav
-  display: none
+  @include center
   position: fixed
   width: 100%
-  height: 100%
+  height: 100vh
   background: transparentize(#000000, 0.4)
   backdrop-filter: blur(40px);
-
-#box
-  input
-    width: calc(30% - 2rem)
-    background: none
-    padding: .4rem 1rem .3rem 1rem
-    font-family: monospace
-    font-size: 1em
-    color: $periwinkle
-    border: none
-    border-bottom: solid 1px #5e5e5e;
-    line-height: 36px
-    border-radius: 15px 15px 0 0;
-    &:focus
-      outline: none
-      background: transparentize(#323232, .50);
-  p
-    color: #8B949E
-    font-size: .9em
-    padding: 0rem 0 0 1rem
-  a
-    @include link
-    width: calc(100% - 3rem - 2px)
-    padding: 0 1.5rem
-    border: solid 1px rgba(0, 0, 0, 0)
+  transition: .5s
+  #box
+    @include select-off
+    width: 30vw
+    max-height: 400px
+    input
+      width: calc(100% - 2rem)
+      display: inline
+      background: transparentize(#323232, .50)
+      padding: .4rem 1rem .3rem 1rem
+      font-weight: bold
+      color: $peach
+      border: solid 1px #5e5e5e
+      border-radius: 10px
+      line-height: 36px
+      &:focus
+        outline: none
+    p
+      color: #8B949E
+      font-size: .9em
+      padding-left: 1.5rem
+    a
+      @include link
+      display: flex
+      gap: .5rem
+      width: calc(100% - 5rem)
+      padding: .6rem 2.5rem
+      border: solid 1px rgba(0, 0, 0, 0)
+      &:hover
+        border: solid 1px #5e5e5e
+        border-radius: 10px
+    i
+      padding-top: .1rem
+    .org
+      margin-left: -.3em
 
 .loader
   @include center
@@ -89,12 +110,12 @@ nav
   to
     border-color: black
 
-// {} TODO: fix vim colors...
+// {}
 
 section
   @include center
   height: 100vh
-  width: 100vw
+  width: 100%
 
 .home
   img
@@ -106,10 +127,29 @@ section
     height: 300px
     width: 290px
     p
-      text-align: justify
+      padding: 0 .5rem
     a
       @include link
     h1, p
       margin: 0
     h1
       font-size: 7em
+
+@media (max-width: 1300px)
+
+  .m-btn
+    font-size: 5em
+    margin: 5rem
+
+  section
+    flex-direction: column
+
+  .home
+    img
+      max-width: 400px
+    div
+      margin-top: -4rem
+    p
+      font-size: 1.5em
+    input
+      height: 3rem
