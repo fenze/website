@@ -39,13 +39,15 @@ body
   z-index: 99
 
 nav
-  @include center
+  display: flex
+  justify-content: center
+  align-items: center
   position: fixed
   width: 100%
   height: 100vh
   background: transparentize(#000000, 0.4)
-  backdrop-filter: blur(40px);
-  transition: .5s
+  -webkit-backdrop-filter: blur(40px)
+  backdrop-filter: blur(40px)
   #box
     @include select-off
     width: 30vw
@@ -144,11 +146,18 @@ section
   section
     flex-direction: column
 
+  nav
+    #box
+      width: 50%
+    a
+      font-size: 1.2em
+
   .home
     img
       max-width: 400px
     div
       margin-top: -4rem
+      height: auto
     p
       font-size: 1.5em
     input
