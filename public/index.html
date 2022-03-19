@@ -10,7 +10,7 @@
     <script defer src='scripts/loader.js'></script>
   </head>
   <body>
-    <a class="m-btn fa-solid fa-bars"></a>
+    <a class="m-btn fa-solid fa-bars-staggered"></a>
 
     <div class='loader'>
       <h1>fenze</hi>
@@ -20,8 +20,10 @@
       <div id='box'>
         <input placeholder='Search'>
         <p> Navigation </p>
-        <a class='search-element' href='#main'>
+        <a class='search-element' href='#home'>
           <i class="fa-solid fa-house"></i>Home</a>
+        <a class='search-element' href='#offer'>
+          <i class="fa-solid fa-bag-shopping"></i>Offer</a>
         <p> Social Media </p>
         <a class='search-element' href='https://github.com/fenze'>
           <i class="fa-brands fa-github"></i>Github</a>
@@ -39,13 +41,57 @@
       </div>
     </nav>
 
-    <section class='home'>
+    <section id='home'>
       <img src='images/memoji.png'>
       <div>
         <h1> fenze </h1>
         <p>Hi, I’m Kacper and I’m a Software Engineer with over 4 years of coding experience.
            I’m particularly interested in data modelling, system design, distributed systems,
            cloud computing, and backend development. <a href="#about">See more</a>.</p>
+      </div>
+    </section>
+    <section id='offer'>
+      <div id='box'>
+        <div>
+          <h1> <i class="fa-solid fa-earth-americas"></i> FRONT </h1>
+          <p class='category'> Technologies </p>
+          <p class='text'>
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-css3"></i>
+            <i class="fa-brands fa-sass"></i>
+            <i class="fa-brands fa-js"></i>
+            <i class="fa-brands fa-php"></i>
+          </p>
+          <a href='https://github.com/fenze?tab=repositories&q=&type=&language=css'>
+            <button> See projects </button>
+          </a>
+        </div>
+        <div>
+          <h1> <i class="fa-solid fa-server"></i> BACK </h1>
+          <p class='category'> Technologies </p>
+          <p class='text'>
+            <i class="fa-brands fa-git-alt"></i>
+            <i class="fa-brands fa-python"></i>
+            <i class="fa-solid fa-c"></i>
+            <i class="fa-solid fa-database"></i>
+            <i class="fa-brands fa-golang"></i>
+          </p>
+          <a href='https://github.com/fenze?tab=repositories&q=&type=&language=python&sort='>
+            <button> See projects </button>
+          </a>
+        </div>
+        <div>
+          <h1> <i class="fa-solid fa-star"></i> OTHER </h1>
+          <p class='category'> Technologies </p>
+          <p class='text'>
+            <i class="fa-brands fa-linux"></i>
+            <i class="fa-brands fa-github"></i>
+            SH
+          </p>
+          <a href='https://github.com/fenze?tab=repositories&q=&type=&language=shell&sort='>
+            <button> See projects </button>
+          </a>
+        </div>
       </div>
     </section>
   </body>
