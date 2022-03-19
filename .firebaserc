@@ -1,7 +1,5 @@
 {
   "projects": {
     "website": "fenze-1fbb5",
-    "default": "fenze-1fbb5"
-  },
-  "targets": {}
+  }
 }
