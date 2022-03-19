@@ -6,8 +6,7 @@ mbtn.click(() => {
   if (nav.css("display") == "none") {
     mbtn.removeClass("fa-bars")
     mbtn.addClass("fa-xmark")
-    nav.show()
-    nav.css("display: flex")
+    nav.css('display', 'flex')
     $("#box > input").focus()
   } else {
     mbtn.removeClass("fa-xmark")
