@@ -16,9 +16,13 @@ mbtn.click(() => {
 })
 
 $(document).on("keyup", e => {
-  console.log(e.keyCode)
   if (e.keyCode === 27 || e.keyCode === 191)
     mbtn.click()
+
+  if (e.keyCode === 13)
+      for (entry of document.querySelectorAll(".search-element"))
+        if (entry.style.display != "none")
+          window.open(entry.getAttribute("href"), name='_self')
 })
 
 $("#box > input").on("keyup", e => {
