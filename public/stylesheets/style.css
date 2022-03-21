@@ -50,6 +50,7 @@ nav {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px); }
   nav #box {
@@ -186,19 +187,16 @@ nav {
     backdrop-filter: blur(2px); }
   section, #offer > #box {
     flex-direction: column; }
-  section {
-    height: 100vh; }
   #offer #box {
-    gap: 0; }
-  #offer div {
-    transform: scale(0.9); }
+    transform: scale(0.7); }
   nav #box {
     width: 80vw; }
   #home div {
     margin-top: -4rem; } }
 
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; }
 
 * {
   -webkit-user-select: none;
