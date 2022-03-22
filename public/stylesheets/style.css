@@ -55,7 +55,7 @@ nav {
   backdrop-filter: blur(40px); }
   nav #box {
     width: 400px; }
-    nav #box div {
+    nav #box #search {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -65,19 +65,19 @@ nav {
       background: rgba(50, 50, 50, 0.7);
       border-radius: 10px;
       transition: .5s; }
-    nav #box #search i {
-      padding: 0 1rem; }
-    nav #box #search input {
-      width: 100%;
-      margin: 3px 0 0 -4px;
-      padding: 0;
-      color: #FEC8A7;
-      background: none;
-      border: none;
-      font-weight: bold;
-      line-height: 36px; }
-      nav #box #search input:focus {
-        outline: none; }
+      nav #box #search i {
+        padding: 0 1rem; }
+      nav #box #search input {
+        width: 100%;
+        margin: 3px 0 0 -4px;
+        padding: 0;
+        color: #FEC8A7;
+        background: none;
+        border: none;
+        font-weight: bold;
+        line-height: 36px; }
+        nav #box #search input:focus {
+          outline: none; }
     nav #box p {
       color: #8B949E;
       font-size: .9em;
@@ -103,13 +103,13 @@ nav {
 
 #offer #box {
   display: flex;
+  text-align: center;
   gap: 2rem; }
   #offer #box div {
     width: 20rem;
     height: 20rem;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    text-align: center; }
+    border-radius: 1rem; }
     #offer #box div h1 {
       font-size: 3em; }
     #offer #box div .category {
@@ -119,20 +119,20 @@ nav {
       margin: 0; }
     #offer #box div .text {
       margin: 0;
-      padding: 1rem 0 0 2rem;
       font-size: 2em;
       font-weight: bold;
+      margin: auto;
       width: calc(100% - 4rem); }
     #offer #box div button {
       width: 80%;
-      margin-top: 2rem;
       background: rgba(255, 255, 255, 0.2);
       color: white;
       font-size: 1.2em;
       font-weight: bold;
       height: 3rem;
       border: none;
-      border-radius: .7rem; }
+      border-radius: .7rem;
+      margin: 3rem 0; }
       #offer #box div button:hover {
         cursor: pointer;
         background: #777; }
@@ -142,7 +142,7 @@ nav {
   margin: 3rem;
   position: fixed;
   z-index: 99;
-  transition: .5s; }
+  transition: 1s; }
   #menu:hover {
     cursor: pointer;
     transform: scale(1.1); }
@@ -179,22 +179,47 @@ nav {
 .fa-people-group {
   margin-left: -2px; }
 
+::-webkit-scrollbar {
+  width: 0; }
+
+::-webkit-scrollbar-track {
+  background: black; }
+
+::-webkit-scrollbar-thumb {
+  background: rgba(254, 200, 167, 0.7);
+  border-radius: 1rem; }
+
 @media (max-width: 1100px) {
   #menu {
-    margin: 2rem;
-    font-size: 2.5rem;
+    margin: 3rem;
+    font-size: 3rem;
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px); }
   section, #offer > #box {
     flex-direction: column; }
-  #offer #box {
-    transform: scale(0.7); }
+  #offer {
+    height: auto; }
+    #offer #box {
+      transform: scale(0.7); }
+  #home img {
+    max-width: 70%;
+    min-width: 100px; }
+  #home div {
+    text-align: center; }
+    #home div h1 {
+      font-size: 5em; }
   nav #box {
-    width: 70vw;
-    max-height: 70vh;
-    overflow-x: auto; }
+    width: 70vw; }
+    nav #box #entries {
+      max-height: 70vh;
+      overflow-x: auto; }
   #home div {
     margin-top: -4rem; } }
+
+@media (max-width: 768px) {
+  #menu {
+    margin: 3vw;
+    font-size: 10vw; } }
 
 html {
   scroll-behavior: smooth;
@@ -214,16 +239,6 @@ html {
   textarea,
   input {
     font-size: 16px; } }
-
-::-webkit-scrollbar {
-  width: 10px; }
-
-::-webkit-scrollbar-track {
-  background: #000; }
-
-::-webkit-scrollbar-thumb {
-  background: rgba(203, 199, 252, 0.7);
-  border-radius: 1rem; }
 
 @keyframes typewriter {
   0% {
