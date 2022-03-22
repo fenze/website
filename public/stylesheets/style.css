@@ -190,7 +190,8 @@ nav {
   #offer #box {
     transform: scale(0.7); }
   nav #box {
-    width: 80vw; }
+    width: 80vw;
+    max-height: 80vh; }
   #home div {
     margin-top: -4rem; } }
 
