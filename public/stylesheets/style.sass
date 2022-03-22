@@ -203,8 +203,9 @@ nav
 
   nav
     #box
-      width: 80vw
-      max-height: 80vh
+      width: 70vw
+      max-height: 70vh
+      overflow-x: auto
 
   #home
     div
@@ -235,15 +236,14 @@ html
 
 // Custom scrollbar
 ::-webkit-scrollbar
-  width: 25px
+  width: 10px
 
 ::-webkit-scrollbar-track
-  background: black
+  background: #000
 
 ::-webkit-scrollbar-thumb
   background: transparentize($periwinkle, .3)
   border-radius: 1rem
-  border: solid 8px black
 
 // typing animation
 @keyframes typewriter

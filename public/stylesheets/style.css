@@ -190,8 +190,9 @@ nav {
   #offer #box {
     transform: scale(0.7); }
   nav #box {
-    width: 80vw;
-    max-height: 80vh; }
+    width: 70vw;
+    max-height: 70vh;
+    overflow-x: auto; }
   #home div {
     margin-top: -4rem; } }
 
@@ -215,15 +216,14 @@ html {
     font-size: 16px; } }
 
 ::-webkit-scrollbar {
-  width: 25px; }
+  width: 10px; }
 
 ::-webkit-scrollbar-track {
-  background: black; }
+  background: #000; }
 
 ::-webkit-scrollbar-thumb {
   background: rgba(203, 199, 252, 0.7);
-  border-radius: 1rem;
-  border: solid 8px black; }
+  border-radius: 1rem; }
 
 @keyframes typewriter {
   0% {
