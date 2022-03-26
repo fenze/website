@@ -1,52 +1,39 @@
-$(setTimeout(() => {
-  $('.loader').remove()
-  document.body.style.overflow = 'visible'
-}, 400))
+$(setTimeout(() => $('.loader').remove(), 700))
 
-const search = () => {
-  input = document.querySelector('#search > input').value.toUpperCase()
-  menu = document.querySelectorAll('.search-element')
-
-  for (element of menu)
-    if (element.innerHTML.toUpperCase().indexOf(input) == -1) {
-      element.style.display = 'none'
-    }
-    else {
-      element.style.display = 'flex'
-    }
-}
-
-mbtn = $('#menu')
+menu = $('#nav-btn')
 nav = $('nav')
-mbtn.click(() => {
+
+menu.click(() => {
   if (nav.css('display') == "none") {
-    mbtn.removeClass('fa-bars')
-    mbtn.addClass('fa-xmark')
-    mbtn.css('color', '#FEC8A7')
+    menu.css('background', '#FEC8A7')
+    menu.addClass('nav-close')
     nav.css('display', 'flex')
-    document.body.style.overflow = 'hidden'
-    input=$('#search > input').val('')
-    input.focus()
-    search()
+    $('#search > input').focus()
   } else {
-    mbtn.removeClass('fa-xmark')
-    mbtn.addClass('fa-bars')
-    document.body.style.overflow = 'visible'
-    mbtn.css('color', '#CBC7FC')
+    menu.css('background', '#CBC7FC')
+    menu.removeClass('nav-close')
     nav.hide()
   }
 })
 
-$(document).on('keyup', e => {
-  if (e.keyCode === 27 || e.keyCode === 191)
-    mbtn.click()
+$('body').on('keyup', e => {
+  if (e.keyCode == 27 || e.keyCode == 191)
+    menu.click()
 
-  if (e.keyCode === 13)
-      for (entry of document.querySelectorAll('.search-element'))
+  if (e.keyCode == 13)
+      for (entry of $('.search-element'))
         if (entry.style.display != 'none') {
-          mbtn.click()
+          menu.click()
           window.open(entry.getAttribute('href'), name='_self')
         }
 })
 
-$('#search > input').on("keyup", () => search())
+$('#search > input').on("keyup", () => {
+  input = $('#search > input').val().toUpperCase()
+
+  for (e of $('.search-element'))
+    if (e.innerHTML.toUpperCase().indexOf(input) == -1)
+      e.style.display = 'none'
+    else
+      e.style.display = 'flex'
+})
