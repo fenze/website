@@ -109,8 +109,7 @@ nav {
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px); }
   nav #box {
-    width: 400px;
-    height: 100%; }
+    width: 400px; }
     nav #box #search {
       display: flex;
       align-items: center;
