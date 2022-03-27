@@ -17,30 +17,36 @@ body
   color: $periwinkle
   background: radial-gradient(circle, rgb(20,20,75) -40%, rgb(0,0,0) 80%)
 
-#nav-btn
+
+#nav-btn-parent
+  @include flex-center
   position: fixed
-  top: 0
+  height: 6rem
+  width: 6rem
+  margin: 0 !important
+  padding: 0
   z-index: 99
-  background: $periwinkle
-  height: 7px
-  width: 50px
-  margin-top: 3rem
-  margin-left: 2rem
-  display: block
-  border-radius: 7px
-  transition: .3s
-  &:before, &:after
-    content: ''
-    position: absolute
+
+  #nav-btn
+    position: fixed
     background: $periwinkle
     height: 7px
     width: 50px
+    display: block
     border-radius: 7px
-    transition: .3s
-  &:before
-    top: -250%
-  &:after
-    top: 250%
+    transition: 200ms
+    &:before, &:after
+      content: ''
+      position: absolute
+      background: $periwinkle
+      height: 7px
+      width: 50px
+      border-radius: 7px
+      transition: 300ms
+    &:before
+      top: -250%
+    &:after
+      top: 250%
 
 
 .nav-close
@@ -240,6 +246,9 @@ nav
 
 // Tablet/mobile
 @media (max-width: 1100px)
+  #nav-btn-parent
+    margin: 10vw 5vw
+
   section, #offer > #box
     flex-direction: column
 
@@ -252,11 +261,11 @@ nav
   #home
     img
       max-width: 70%
-      max-width: 350px
+      max-width: 220px
 
     div > h1
         text-align: center
-        font-size: 6em
+        font-size: clamp(16px, 20vw, 7em)
 
   nav
     #box

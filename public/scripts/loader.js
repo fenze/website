@@ -3,12 +3,12 @@ $(setTimeout(() => $('.loader').remove(), 700))
 menu = $('#nav-btn')
 nav = $('nav')
 
-menu.click(() => {
+$('#nav-btn-parent').click(() => {
   if (nav.css('display') == "none") {
     menu.css('background', '#FEC8A7')
     menu.addClass('nav-close')
     nav.css('display', 'flex')
-    $('#search > input').focus()
+    $('#search > input').val('').focus()
   } else {
     menu.css('background', '#CBC7FC')
     menu.removeClass('nav-close')
