@@ -9,6 +9,7 @@ $('#nav-btn-parent').click(() => {
     menu.addClass('nav-close')
     nav.css('display', 'flex')
     $('#search > input').val('').focus()
+		$('#search > input').keyup()
   } else {
     menu.css('background', '#CBC7FC')
     menu.removeClass('nav-close')

@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 'Droid Sans', sans-serif;
+  font-family: SFUIText, Helvetica Neue, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 'Droid Sans', sans-serif;
   color: #CBC7FC;
-  background: radial-gradient(circle, #14144b -40%, black 80%); }
+  background: radial-gradient(circle, #14144b -40%, black 80%);
+  background-attachment: scroll; }
 
 #nav-btn-parent {
   display: flex;
@@ -221,7 +222,7 @@ nav {
       transform: scale(0.7); }
   #home img {
     max-width: 70%;
-    max-width: 220px; }
+    max-width: 350px; }
   #home div > h1 {
     text-align: center;
     font-size: clamp(16px, 20vw, 7em); }
@@ -234,7 +235,7 @@ nav {
       max-height: 80%;
       overflow-x: auto; }
   #home div {
-    margin-top: -4rem; }
+    margin-top: -2rem; }
   .loader > h1 {
     font-size: 12vw; } }
 
