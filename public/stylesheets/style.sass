@@ -14,8 +14,9 @@ body
   margin: 0
   font-family: SFUIText, Helvetica Neue, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 'Droid Sans', sans-serif
   color: $periwinkle
-  background: radial-gradient(circle, rgb(20,20,75) -40%, rgb(0,0,0) 80%)
-  background-attachment: scroll
+  background: radial-gradient(circle, #988BA2 -200%, rgb(0,0,0) 80%)
+  background-size: 100vw 100vh
+  background-attachment: fixed
 
 #nav-btn-parent
   @include flex-center
@@ -31,8 +32,8 @@ body
   #nav-btn
     position: fixed
     background: $periwinkle
-    height: 7px
-    width: 50px
+    height: 3px
+    width: 40px
     display: block
     border-radius: 7px
     transition: 200ms
@@ -40,14 +41,14 @@ body
       content: ''
       position: absolute
       background: $periwinkle
-      height: 7px
-      width: 50px
+      height: 3px
+      width: 40px
       border-radius: 7px
       transition: 300ms
     &:before
-      top: -250%
+      top: -500%
     &:after
-      top: 250%
+      top: 500%
 
 
 .nav-close
@@ -66,7 +67,7 @@ body
   height: 100%
   position: fixed
   overflow: hidden
-  background: radial-gradient(circle, rgb(20,20,75) -40%, rgb(0,0,0) 80%)
+  background: radial-gradient(circle, #988BA2 -200%, rgb(0,0,0) 80%)
   background-size: 100vw 100vh
   z-index: 99
 
@@ -115,6 +116,7 @@ section
       font-size: 7em
 
 
+// TODO: simplify navigation
 nav
   display: none
   justify-content: center
@@ -183,6 +185,7 @@ nav
 
 
 #offer
+  height: 100vh
   #box
     display: flex
     text-align: center
@@ -226,31 +229,29 @@ nav
           background: transparentize(#fff, 0.9)
 
 
+// TODO: Remove these margins with tables
 .fa-bag-shopping
   margin-right: 2px
-
-
 .fa-code-branch,
 .fa-linkedin-in
   margin-right: 3px
-
-
 .fa-user-group
   margin-left: -4px
   margin-right: 1px
-
-
 .fa-house,
 .fa-people-group
   margin-left: -2px
 
+// TODO: Add prefered schemas
+// @media (prefers-color-scheme: dark)
+// @media (prefers-color-scheme: light)
 
 // Tablet/mobile
 @media (max-width: 1100px)
   #nav-btn-parent
     margin: 10vw 5vw
 
-  section, #offer > #box
+  section, #offer > div
     flex-direction: column
 
   #offer
@@ -304,6 +305,7 @@ html
   user-drag: none
 
 
+// TODO: Create scrollbar
 ::-webkit-scrollbar
   width: 0
 

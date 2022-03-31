@@ -1,111 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <title> About me </title>
-    <link rel='stylesheet' href='stylesheets/style.css'>
-    <link rel='icon' href='images/icon.png'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="theme-color" content="#000000"
-    <script src='https://kit.fontawesome.com/246702ad8c.js' crossorigin='anonymous'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src='scripts/loader.js'></script>
-  </head>
-  <body>
+	<head>
+		<meta charset='utf-8'>
+		<title> About me </title>
+		<link rel='stylesheet' href='stylesheets/style.css'>
+		<link rel='icon' href='images/icon.png'>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="theme-color" content="#000000">
+		<script src='https://kit.fontawesome.com/246702ad8c.js' crossorigin='anonymous'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script defer src='scripts/loader.js'></script>
+	</head>
+	<body>
 
-    <div id='nav-btn-parent'>
-      <div id='nav-btn'></div>
-    </div>
+		<div id='nav-btn-parent'>
+			<div id='nav-btn'></div>
+		</div>
 
-    <div class='loader'>
-      <h1>fenze</hi>
-    </div>
+		<div class='loader'>
+			<h1>fenze</hi>
+		</div>
 
-    <nav>
-      <div id='box'>
-        <div id='search'>
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input placeholder='Search'>
-        </div>
-        <div id='entries'>
-          <p> Navigation </p>
-          <a class='search-element' href='#home' onclick='nav-btn.click()'>
-            <i class="fa-solid fa-house"></i> Home </a>
-          <a class='search-element' href='#offer' onclick='nav-btn.click()'>
-            <i class="fa-solid fa-bag-shopping"></i> Offer</a>
+		<nav>
+			<div id='box'>
+				<div id='search'>
+					<i class="fa-solid fa-magnifying-glass"></i>
+					<input placeholder='Search'>
+				</div>
+				<div id='entries'>
+					<p> Navigation </p>
+					<a class='search-element' href='#home' onclick='menu.click()'>
+						<i class="fa-solid fa-house"></i> Home </a>
+					<a class='search-element' href='#offer' onclick='menu.click()'>
+						<i class="fa-solid fa-bag-shopping"></i> Offer</a>
 
-          <a class='search-element' href='#offer'>
-            <i class="fa-solid fa-people-group"></i> Team </a>
+					<a class='search-element' href='#offer'>
+						<i class="fa-solid fa-people-group"></i> Team </a>
 
-          <p> Social Media </p>
-          <a class='search-element' href='https://github.com/fenze'>
-            <i class="fa-brands fa-github"></i>Github</a>
-          <a class='search-element' href='https://github.com/fenze'>
-            <i class="fa-brands fa-twitter"></i>Twitter</a>
-          <a class='search-element' href='https://www.linkedin.com/in/kacper-fiedorowicz-9ba8b522a/'>
-            <i class="fa-brands fa-linkedin-in"></i>Linkedin</a>
-          <p class='search-categories'> Other </p>
-          <a class='search-element' href='https://github.com/fenze?tab=repositories'>
-            <i class="fa-solid fa-code-branch"></i>Repositories</a>
-          <a class='search-element org' href='https://github.com/mini-rose'>
-            <i class="fa-solid fa-user-group"></i>Organization</a>
-          <a class='search-element' href='mailto:contact@fenze.dev'>
-            <i class="fa-solid fa-envelope"></i>Send mail</a><br>
-        </div>
-      </div>
-    </nav>
+					<p> Social Media </p>
+					<a class='search-element' href='https://github.com/fenze'>
+						<i class="fa-brands fa-github"></i>Github</a>
+					<a class='search-element' href='https://github.com/fenze'>
+						<i class="fa-brands fa-twitter"></i>Twitter</a>
+					<a class='search-element' href='https://www.linkedin.com/in/kacper-fiedorowicz-9ba8b522a/'>
+						<i class="fa-brands fa-linkedin-in"></i>Linkedin</a>
+					<p class='search-categories'> Other </p>
+					<a class='search-element' href='https://github.com/fenze?tab=repositories'>
+						<i class="fa-solid fa-code-branch"></i>Repositories</a>
+					<a class='search-element org' href='https://github.com/mini-rose'>
+						<i class="fa-solid fa-user-group"></i>Organization</a>
+					<a class='search-element' href='mailto:contact@fenze.dev'>
+						<i class="fa-solid fa-envelope"></i>Send mail</a><br>
+				</div>
+			</div>
+		</nav>
 
-    <section id='home'>
-      <img src='images/memoji.png'>
-      <div>
-        <h1> fenze </h1>
-        <p>I’m a Software Engineer with over 4 years of coding experience.
-           I’m particularly interested in data modelling, system design, distributed systems,
-           cloud computing, and backend development. <a href="#offer">See more</a>.</p>
-      </div>
-    </section>
-    <section id='offer'>
-      <div id='box'>
-        <div>
-          <h1> <i class="fa-solid fa-earth-americas"></i> FRONT </h1>
-          <p class='category'> Technologies </p>
-          <p class='text'>
-            <i class="fa-brands fa-html5"></i>
-            <i class="fa-brands fa-css3"></i>
-            <i class="fa-brands fa-sass"></i>
-            <i class="fa-brands fa-js"></i>
-          </p>
-          <a href='https://github.com/fenze?tab=repositories&q=&type=&language=css'>
-            <button> See projects </button>
-          </a>
-        </div>
-        <div>
-          <h1> <i class="fa-solid fa-server"></i> BACK </h1>
-          <p class='category'> Technologies </p>
-          <p class='text'>
-            <i class="fa-brands fa-git-alt"></i>
-            <i class="fa-brands fa-python"></i>
-            <i class="fa-solid fa-c"></i>
-            <i class="fa-solid fa-database"></i>
-            <i class="fa-brands fa-golang"></i>
-          </p>
-          <a href='https://github.com/fenze?tab=repositories&q=&type=&language=python&sort='>
-            <button> See projects </button>
-          </a>
-        </div>
-        <div>
-          <h1> <i class="fa-solid fa-star"></i> OTHER </h1>
-          <p class='category'> Technologies </p>
-          <p class='text'>
-            <i class="fa-brands fa-linux"></i>
-            <i class="fa-brands fa-github"></i>
-            SH
-          </p>
-          <a href='https://github.com/fenze?tab=repositories&q=&type=&language=shell&sort='>
-            <button> See projects </button>
-          </a>
-        </div>
-      </div>
-    </section>
-  </body>
+		<section id='home'>
+			<img src='images/memoji.png'>
+			<div>
+				<h1> fenze </h1>
+				<p>I’m a Software Engineer with over 4 years of coding experience.
+					 I’m particularly interested in data modelling, system design, distributed systems,
+					 cloud computing, and backend development. <a href="#offer">See more</a>.</p>
+			</div>
+		</section>
+		<section id='offer'>
+			<div id='box'>
+				<div>
+					<h1> <i class="fa-solid fa-earth-americas"></i> FRONT </h1>
+					<p class='category'> Technologies </p>
+					<p class='text'>
+						<i class="fa-brands fa-html5"></i>
+						<i class="fa-brands fa-css3"></i>
+						<i class="fa-brands fa-sass"></i>
+						<i class="fa-brands fa-js"></i>
+					</p>
+					<a href='https://github.com/fenze?tab=repositories&q=&type=&language=css'>
+						<button> See projects </button>
+					</a>
+				</div>
+				<div>
+					<h1> <i class="fa-solid fa-server"></i> BACK </h1>
+					<p class='category'> Technologies </p>
+					<p class='text'>
+						<i class="fa-brands fa-git-alt"></i>
+						<i class="fa-brands fa-python"></i>
+						<i class="fa-solid fa-c"></i>
+						<i class="fa-solid fa-database"></i>
+						<i class="fa-brands fa-golang"></i>
+					</p>
+					<a href='https://github.com/fenze?tab=repositories&q=&type=&language=python&sort='>
+						<button> See projects </button>
+					</a>
+				</div>
+				<div>
+					<h1> <i class="fa-solid fa-star"></i> OTHER </h1>
+					<p class='category'> Technologies </p>
+					<p class='text'>
+						<i class="fa-brands fa-linux"></i>
+						<i class="fa-brands fa-github"></i>
+						SH
+					</p>
+					<a href='https://github.com/fenze?tab=repositories&q=&type=&language=shell&sort='>
+						<button> See projects </button>
+					</a>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>

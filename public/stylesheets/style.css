@@ -2,8 +2,9 @@ body {
   margin: 0;
   font-family: SFUIText, Helvetica Neue, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 'Droid Sans', sans-serif;
   color: #CBC7FC;
-  background: radial-gradient(circle, #14144b -40%, black 80%);
-  background-attachment: scroll; }
+  background: radial-gradient(circle, #988BA2 -200%, black 80%);
+  background-size: 100vw 100vh;
+  background-attachment: fixed; }
 
 #nav-btn-parent {
   display: flex;
@@ -20,8 +21,8 @@ body {
   #nav-btn-parent #nav-btn {
     position: fixed;
     background: #CBC7FC;
-    height: 7px;
-    width: 50px;
+    height: 3px;
+    width: 40px;
     display: block;
     border-radius: 7px;
     transition: 200ms; }
@@ -29,14 +30,14 @@ body {
       content: '';
       position: absolute;
       background: #CBC7FC;
-      height: 7px;
-      width: 50px;
+      height: 3px;
+      width: 40px;
       border-radius: 7px;
       transition: 300ms; }
     #nav-btn-parent #nav-btn:before {
-      top: -250%; }
+      top: -500%; }
     #nav-btn-parent #nav-btn:after {
-      top: 250%; }
+      top: 500%; }
 
 .nav-close {
   background: none !important; }
@@ -56,7 +57,7 @@ body {
   height: 100%;
   position: fixed;
   overflow: hidden;
-  background: radial-gradient(circle, #14144b -40%, black 80%);
+  background: radial-gradient(circle, #988BA2 -200%, black 80%);
   background-size: 100vw 100vh;
   z-index: 99; }
   .loader h1 {
@@ -159,42 +160,44 @@ nav {
       nav #box a .org {
         margin-left: -.3em; }
 
-#offer #box {
-  display: flex;
-  text-align: center;
-  gap: 2rem; }
-  #offer #box div {
-    width: 20rem;
-    height: 20rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem; }
-    #offer #box div h1 {
-      font-size: 3em; }
-    #offer #box div .category {
-      color: #8B949E;
-      font-size: .9em;
-      font-weight: bold;
-      margin: 0; }
-    #offer #box div .text {
-      margin: 0;
-      font-size: 2em;
-      font-weight: bold;
-      margin: auto;
-      width: calc(100% - 4rem); }
-    #offer #box div button {
-      width: 80%;
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      font-size: 1.2em;
-      font-weight: bold;
-      height: 3rem;
-      border: none;
-      border-radius: .7rem;
-      margin: 3rem 0; }
-      #offer #box div button:hover {
-        cursor: pointer;
-        transform: scale(1.05);
-        background: rgba(255, 255, 255, 0.1); }
+#offer {
+  height: 100vh; }
+  #offer #box {
+    display: flex;
+    text-align: center;
+    gap: 2rem; }
+    #offer #box div {
+      width: 20rem;
+      height: 20rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem; }
+      #offer #box div h1 {
+        font-size: 3em; }
+      #offer #box div .category {
+        color: #8B949E;
+        font-size: .9em;
+        font-weight: bold;
+        margin: 0; }
+      #offer #box div .text {
+        margin: 0;
+        font-size: 2em;
+        font-weight: bold;
+        margin: auto;
+        width: calc(100% - 4rem); }
+      #offer #box div button {
+        width: 80%;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 1.2em;
+        font-weight: bold;
+        height: 3rem;
+        border: none;
+        border-radius: .7rem;
+        margin: 3rem 0; }
+        #offer #box div button:hover {
+          cursor: pointer;
+          transform: scale(1.05);
+          background: rgba(255, 255, 255, 0.1); }
 
 .fa-bag-shopping {
   margin-right: 2px; }
@@ -214,7 +217,7 @@ nav {
 @media (max-width: 1100px) {
   #nav-btn-parent {
     margin: 10vw 5vw; }
-  section, #offer > #box {
+  section, #offer > div {
     flex-direction: column; }
   #offer {
     height: auto; }
