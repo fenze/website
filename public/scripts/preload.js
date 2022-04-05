@@ -8,6 +8,7 @@
 (() => {
 
 	$(() => {
+		$(window).scrollTop(0);
 		$(setTimeout(() => $('.loader').remove(), 700))
 		$('script[src="scripts/preload.js"]').remove()
 	})
