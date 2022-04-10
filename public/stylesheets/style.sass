@@ -1,9 +1,4 @@
-$peach:       #FEC8A7
-$mimosa:      #FCECA5
-$seafoam:     #B5EECB
-$periwinkle:  #CBC7FC
-$clay:        #8B949E
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap')
 
 @mixin flex-center
   display: flex
@@ -12,35 +7,74 @@ $clay:        #8B949E
 
 body
   margin: 0
-  font-family: SFUIText, Helvetica Neue, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 'Droid Sans', sans-serif
-  color: $periwinkle
-  background: radial-gradient(circle, #988BA2 -200%, rgb(0,0,0) 80%)
-  background-size: 100vw 100vh
-  background-attachment: fixed
+  font-family: 'Montserrat', sans-serif
+  background: #fff
+  transition: 500ms
+  color: #000
+
+.dark
+  background: #000
+  color: #fff
+  #home
+    a
+      color: #fff
+  #nav-btn-parent
+    background: rgba(#000, .8)
+    #menu
+      a
+        color: #fff
+    #nav-btn
+      &:before, &:after
+        background: #fff
+  #offer
+    #box
+      div, button
+        color: #fff
+        border: solid 1px #fff
 
 #nav-btn-parent
   @include flex-center
   position: fixed
-  height: 6rem
-  width: 6rem
+  height: 80px
+  width: 100%
   margin: 0 !important
   padding: 0
+  background: rgba(#fff, .8)
+  transition: 500ms
   z-index: 99
-  -webkit-backdrop-filter: blur(1px)
-  backdrop-filter: blur(1px)
-
+  -webkit-backdrop-filter: blur(5px)
+  backdrop-filter: blur(5px)
+  #click
+    @include flex-center
+    position: fixed
+    height: 80px
+    width: 80px
+    left: 0
+    &:hover
+      cursor: pointer
+  #menu
+    position: fixed
+    right: 20px
+    a
+      text-decoration: none
+      text-underline-offset: .3rem
+      margin: 10px
+      color: #000
+      &:hover
+        color: #555
   #nav-btn
     position: fixed
-    background: $periwinkle
+    background: #000
     height: 3px
     width: 40px
     display: block
+    left: 20px
     border-radius: 7px
     transition: 200ms
     &:before, &:after
       content: ''
       position: absolute
-      background: $periwinkle
+      background: #000
       height: 3px
       width: 40px
       border-radius: 7px
@@ -55,7 +89,7 @@ body
   background: none !important
   &:before, &:after
     top: 0 !important
-    background: $peach !important
+    background: #fff !important
   &:before
     transform: rotate(-45deg)
   &:after
@@ -66,23 +100,20 @@ body
   width: 100%
   height: 100%
   position: fixed
+  background: #fff
   overflow: hidden
-  background: radial-gradient(circle, #988BA2 -200%, rgb(0,0,0) 80%)
-  background-size: 100vw 100vh
   z-index: 99
 
   h1
     overflow: hidden
     font-size: 10vw
-    border-right: .5vw solid $periwinkle
+    border-right: .5vw solid #000
     animation: typewriter .3s steps(100), blink .5s steps(20) infinite
-
 
 section
   @include flex-center
   height: 100vh
   width: 100vw
-
 
 #home
   img
@@ -101,7 +132,7 @@ section
     a
       text-decoration: none
       font-weight: bold
-      color: #9095f4
+      color: #000
       &:hover, &:focus
         outline: none
         text-decoration: underline wavy
@@ -124,7 +155,7 @@ nav
   position: fixed
   width: 100%
   height: 100%
-  background: transparentize(#000000, 0.4)
+  background: rgba(#000000, 0.8)
   z-index: 98
   -webkit-backdrop-filter: blur(40px)
   backdrop-filter: blur(40px)
@@ -136,8 +167,8 @@ nav
       width: 100%
       height: 3rem
       margin-top: 2rem
-      color: $peach
-      background: transparentize(#323232, .30)
+      color: #fff
+      background: rgba(#fff, .1)
       border-radius: 10px
       transition: .5s
 
@@ -148,7 +179,7 @@ nav
         width: 100%
         margin: 3px 0 0 -4px
         padding: 0
-        color: $peach
+        color: #fff
         background: none
         border: none
         font-weight: bold
@@ -157,7 +188,7 @@ nav
           outline: none
 
     p
-      color: $clay
+      color: #8B949E
       font-size: .9em
       padding-left: 2rem
 
@@ -166,7 +197,7 @@ nav
       gap: .5rem
       width: calc(100% - 5rem)
       font-weight: bolder
-      color: $peach
+      color: #fff
       padding: .6rem 2.5rem
       text-decoration: none
       &:hover, &:focus
@@ -194,14 +225,14 @@ nav
     div
       width: 20rem
       height: 20rem
-      background: transparentize(#fff, 0.9)
       border-radius: 1rem
+      border: solid 1px #000
 
       h1
         font-size: 3em
 
       .category
-        color: $clay
+        color: #333
         font-size: .9em
         font-weight: bold
         margin: 0
@@ -215,12 +246,11 @@ nav
 
       button
         width: 80%
-        background: transparentize(#fff, 0.8)
-        color: white
+        background: none
         font-size: 1.2em
         font-weight: bold
         height: 3rem
-        border: none
+        border: solid 1px #000
         border-radius: .7rem
         margin: 3rem 0
         &:hover
@@ -241,10 +271,6 @@ nav
 .fa-house,
 .fa-people-group
   margin-left: -2px
-
-// TODO: Add prefered schemas
-// @media (prefers-color-scheme: dark)
-// @media (prefers-color-scheme: light)
 
 // Tablet/mobile
 @media (max-width: 1100px)

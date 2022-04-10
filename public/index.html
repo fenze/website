@@ -5,7 +5,7 @@
 		<title> About me </title>
 		<link rel='stylesheet' href='stylesheets/style.css'>
 		<link rel='icon' href='images/icon.png'>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="theme-color" content="#000000">
 		<script src='https://kit.fontawesome.com/246702ad8c.js' crossorigin='anonymous'></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -14,7 +14,15 @@
 	<body>
 
 		<div id='nav-btn-parent'>
-			<div id='nav-btn'></div>
+			<div id='click'>
+					<div id='nav-btn'></div>
+			</div>
+			<div id='menu'>
+				<i id="theme-btn" class="fa-solid fa-moon"></i>
+				<a id="nav-home" title="Strona tytułowa" href="#home">HOME</a>
+				<a id="nav-offer" title="Co oferuję" href="#offer">OFFER</a>
+				<a id="nav-about" title="Więcej o mnie" href="#about">ABOUT</a>
+			</div>
 		</div>
 
 		<div class='loader'>
@@ -34,7 +42,7 @@
 					<a class='search-element' href='#offer' onclick='menu.click()'>
 						<i class="fa-solid fa-bag-shopping"></i> Offer</a>
 
-					<a class='search-element' href='#offer'>
+					<a class='search-element' href='https://agency.fenze.dev'>
 						<i class="fa-solid fa-people-group"></i> Team </a>
 
 					<p> Social Media </p>
