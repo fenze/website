@@ -1,18 +1,50 @@
-var 	theme = "light"
-const menu = $('#nav-btn')
 const menu_parent = $('#nav-btn-parent')
 const menu_parent_div = $('#nav-btn-parent > #menu')
 const nav = $('nav')
-const mode = $('#theme-btn')
-const prefered_dark = window.matchMedia('(prefers-color-scheme: dark)');
-const sections = ["home", "offer", "team"]
+const sections = ['home', 'offer', 'about']
 const search = $('#search > input')
-const menu_entries  = $(".search-element")
+const menu_entries  = $('.search-element')
+const mode = $('#theme-btn')
+const menu = $('#nav-btn')
 
-// if (prefered_dark)
-	// mode.click()
+const key = {
+	RETURN: 13,
+	DOWN: 40,
+	UP: 38,
+	SLASH: 191,
+	ESC: 27
+}
 
-// Set a loading animation ("Fenze" being typed)
+var theme = 'light'
+var body = $('body')
+var logo = $('#logo')
+
+const dark = () => {
+	mode.removeClass('fa-moon')
+	mode.addClass('fa-sun')
+	body.addClass('dark')
+	menu.css('background', '#fff')
+	logo.attr('src', 'images/logo-nobg.png')
+	theme = 'dark'
+}
+
+const light = () => {
+	$('.loader').css('background', '#fff')
+	mode.removeClass('fa-sun')
+	mode.addClass('fa-moon')
+	body.removeClass('dark')
+	menu.css('background', '#000')
+	logo.attr('src', 'images/logo-nobg-black.png')
+	theme = 'light'
+}
+
+// Set the default theme based on the user's prefferd color scheme.
+theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+	? 'dark' : 'light'
+// theme = 'dark'
+theme === 'dark' ? dark() : light()
+
+// Set a loading animation ('Fenze Agency' being typed)
 $(setTimeout(() => $('.loader').remove(), 700))
 
 // Fuzzy match `str` against the `against` str. This version
@@ -30,54 +62,37 @@ const fuzzy_match = (str, against) => {
 	return true
 }
 
-// Hamburger background
+// Change theme button
+mode.click(() => {
+	theme == 'dark' ? light() : dark()
+})
+
+// Make the burger background clickable
 $('#click').click(() => {
-	menu_parent.css('transition', "0ms")
-	if (nav.css('display') == "none") {
-		menu_parent.css('background', "none")
-		menu_parent_div.css('opacity', "0")
+	menu_parent.css('transition', '0ms')
+	if (nav.css('display') == 'none') {
+		menu_parent.css('background', 'none')
+		menu_parent_div.css('opacity', '0')
 		menu.addClass('nav-close')
-		document.body.style.overflow = "hidden";
+		document.body.style.overflow = 'hidden';
 		nav.css('display', 'flex')
 		search.val('').focus()
 		search.keyup()
 		i = -1
 	} else {
-		menu_parent.css('background', "")
+		menu_parent.css('background', '')
 
-		if (theme == "dark") {
+		if (theme == 'dark') {
 			menu.css('background', '#fff')
 		} else {
 			menu.css('background', '#000')
 		}
-		menu_parent_div.css('opacity', "1")
-		document.body.style.overflow = "";
+		menu_parent_div.css('opacity', '1')
+		document.body.style.overflow = '';
 		menu.removeClass('nav-close')
 		nav.hide()
 	}
-	menu_parent.css('transition', "")
-})
-
-// Theme button
-mode.click(() => {
-	var body = $('body')
-	var logo = $('#logo')
-
-	if (theme == "light") {
-		mode.removeClass("fa-moon")
-		mode.addClass("fa-sun")
-		body.addClass("dark")
-		menu.css('background', '#fff')
-		logo.attr('src', 'images/logo-nobg.png')
-		theme = "dark"
-	} else {
-		mode.removeClass("fa-sun")
-		mode.addClass("fa-moon")
-		body.removeClass("dark")
-		menu.css('background', '#000')
-		logo.attr('src', 'images/logo-nobg-black.png')
-		theme = "light"
-	}
+	menu_parent.css('transition', '')
 })
 
 $(document).scroll(() => {
@@ -96,38 +111,26 @@ $(document).scroll(() => {
 		let windowheight = window.innerHeight
 		let revealtop = reveal.getBoundingClientRect().top
 
-		if (revealtop < windowheight) {
+		if (revealtop < windowheight - 600) {
 			for (s of sections) {
-				$(`#nav-${s}`).css("text-decoration", "none")
+				$(`#nav-${s}`).css('text-decoration', 'none')
 			}
-
 			if (sections.indexOf(reveal.id) >= 0)
-				$(`#nav-${reveal.id}`).css("text-decoration", "underline 2px")
+				$(`#nav-${reveal.id}`).css('text-decoration', 'underline 2px')
 		}
 	}
 })
 
 // Global shortcuts
 $('body').on('keyup', e => {
-	const key = {
-		SLASH: 191,
-		ESC: 27,
-	}
 	if (e.keyCode == key.ESC || e.keyCode == key.SLASH)
 		menu.click()
 })
 
 // Navigation shortcuts
-$('nav').on("keyup", e => {
+$('nav').on('keyup', e => {
 	// List of all buttons in navigation filtered to only visible
 	list = $('#entries > a').filter(':visible')
-
-	// Keys define
-	const key = {
-		RETURN: 13,
-		DOWN: 40,
-		UP: 38
-	}
 
 	// Focus next element
 	if (e.keyCode == key.DOWN) {
@@ -147,7 +150,7 @@ $('nav').on("keyup", e => {
 		return
 	}
 
-	// Opens focused element, if non are selected picks first from visible
+	// Opens focused element and if none are selected, pick first from visible
 	if (e.keyCode == key.RETURN) {
 		done = true
 		for (entry of $('.search-element').filter(':visible')) {
@@ -164,6 +167,7 @@ $('nav').on("keyup", e => {
 			menu.click()
 			window.open(first.getAttribute('href'), target='_self')
 		}
+
 		return
 	}
 
