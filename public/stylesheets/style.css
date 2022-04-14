@@ -1,28 +1,112 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #FFF;
+    border-color: #FFF;
+    text-decoration-color: #FFF; }
+    body a {
+      color: #FFF; }
+      body a:hover {
+        color: #777; }
+    body button {
+      background: none;
+      color: #FFF;
+      border: solid 1px #FFF; }
+    body #nav-btn-parent {
+      background: rgba(0, 0, 0, 0.8); }
+      body #nav-btn-parent #burger {
+        background: #FFF; }
+        body #nav-btn-parent #burger:before, body #nav-btn-parent #burger:after {
+          background: #FFF; }
+    body #home div a {
+      color: #FFF; }
+    body #offer #box > div .category {
+      color: #FFF; }
+    body nav {
+      background: rgba(0, 0, 0, 0.6) !important; }
+      body nav #box {
+        width: 400px; }
+        body nav #box #search {
+          background: rgba(255, 255, 255, 0.1); }
+        body nav #box #entries a {
+          color: #FFF; }
+    body .loader {
+      background: #000;
+      color: #FFF; } }
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #FFF;
+    color: #000;
+    border-color: #000;
+    text-decoration-color: #000; }
+    body a {
+      color: #000 !important; }
+      body a:hover {
+        color: #777; }
+    body nav a {
+      color: #FFF !important; }
+    body button {
+      background: none;
+      border: solid 1px #000; }
+    body #nav-btn-parent {
+      background: rgba(255, 255, 255, 0.8); }
+      body #nav-btn-parent #burger {
+        background: #000; }
+        body #nav-btn-parent #burger:before, body #nav-btn-parent #burger:after {
+          background: #000; }
+    body nav {
+      background: rgba(255, 255, 255, 0.6) !important; }
+      body nav #box {
+        width: 400px; }
+        body nav #box #search {
+          background: rgba(0, 0, 0, 0.1); }
+        body nav #box #entries a {
+          color: #000 !important; }
+    body .loader {
+      background: #FFF; } }
+
+.dark body {
+  background: #000;
+  color: #FFF;
+  border-color: #FFF;
+  text-decoration-color: #FFF; }
+  .dark body a {
+    color: #FFF; }
+    .dark body a:hover {
+      color: #777; }
+  .dark body button {
+    background: none;
+    color: #FFF;
+    border: solid 1px #FFF; }
+  .dark body #nav-btn-parent {
+    background: rgba(0, 0, 0, 0.8); }
+    .dark body #nav-btn-parent #burger {
+      background: #FFF; }
+      .dark body #nav-btn-parent #burger:before, .dark body #nav-btn-parent #burger:after {
+        background: #FFF; }
+  .dark body #home div a {
+    color: #FFF; }
+  .dark body #offer #box > div .category {
+    color: #FFF; }
+  .dark body nav {
+    background: rgba(0, 0, 0, 0.6) !important; }
+    .dark body nav #box {
+      width: 400px; }
+      .dark body nav #box #search {
+        background: rgba(255, 255, 255, 0.1); }
+      .dark body nav #box #entries a {
+        color: #FFF; }
+  .dark body .loader {
+    background: #000;
+    color: #FFF; }
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: #fff;
-  transition: 500ms;
-  color: #000; }
-
-.dark {
-  background: #000;
-  color: #fff; }
-  .dark .loader {
-    background: #000 !important;
-    color: #fff !important; }
-  .dark #home a {
-    color: #fff; }
-  .dark #nav-btn-parent {
-    background: rgba(0, 0, 0, 0.8); }
-    .dark #nav-btn-parent #menu a {
-      color: #fff; }
-    .dark #nav-btn-parent #nav-btn:before, .dark #nav-btn-parent #nav-btn:after {
-      background: #fff; }
-  .dark #offer #box div, .dark #offer #box button {
-    color: #fff;
-    border: solid 1px #fff; }
+  transition: 500ms; }
 
 #nav-btn-parent {
   display: flex;
@@ -33,12 +117,11 @@ body {
   width: 100%;
   margin: 0 !important;
   padding: 0;
-  background: rgba(255, 255, 255, 0.8);
   transition: 500ms;
-  z-index: 99;
+  z-index: 98;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); }
-  #nav-btn-parent #click {
+  #nav-btn-parent #burger-box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +129,7 @@ body {
     height: 80px;
     width: 80px;
     left: 0; }
-    #nav-btn-parent #click:hover {
+    #nav-btn-parent #burger-box:hover {
       cursor: pointer; }
   #nav-btn-parent #menu {
     position: fixed;
@@ -54,41 +137,35 @@ body {
     #nav-btn-parent #menu a {
       text-decoration: none;
       text-underline-offset: .3rem;
-      margin: 10px;
-      color: #000; }
-      #nav-btn-parent #menu a:hover {
-        color: #555; }
-  #nav-btn-parent #nav-btn {
+      margin: 10px; }
+  #nav-btn-parent #burger {
     position: fixed;
-    background: #000;
     height: 3px;
     width: 40px;
     display: block;
     left: 20px;
     border-radius: 7px;
     transition: 200ms; }
-    #nav-btn-parent #nav-btn:before, #nav-btn-parent #nav-btn:after {
+    #nav-btn-parent #burger:before, #nav-btn-parent #burger:after {
       content: '';
       position: absolute;
-      background: #000;
       height: 3px;
       width: 40px;
       border-radius: 7px;
       transition: 300ms; }
-    #nav-btn-parent #nav-btn:before {
+    #nav-btn-parent #burger:before {
       top: -500%; }
-    #nav-btn-parent #nav-btn:after {
+    #nav-btn-parent #burger:after {
       top: 500%; }
 
 .nav-close {
   background: none !important; }
   .nav-close:before, .nav-close:after {
-    top: 0 !important;
-    background: #fff !important; }
+    top: 0 !important; }
   .nav-close:before {
-    transform: rotate(-45deg); }
-  .nav-close:after {
     transform: rotate(45deg); }
+  .nav-close:after {
+    transform: rotate(-45deg); }
 
 .loader {
   display: flex;
@@ -97,8 +174,6 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  background: #000;
-  transition: 1s;
   color: #000;
   overflow: hidden;
   z-index: 99; }
@@ -122,7 +197,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 250px;
+  width: 400px;
   line-height: 1.5; }
   #home div p {
     padding-left: .5rem; }
@@ -142,120 +217,114 @@ section {
     font-size: 7em; }
 
 nav {
+  position: fixed;
   display: none;
   justify-content: center;
   align-items: center;
-  position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 98;
+  z-index: 97;
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px); }
-  nav #box {
-    width: 400px; }
-    nav #box #search {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  nav #search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    transition: .5s; }
+    nav #search i {
+      padding: 0 1rem; }
+    nav #search input {
       width: 100%;
-      height: 3rem;
-      margin-top: 2rem;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      transition: .5s; }
-      nav #box #search i {
-        padding: 0 1rem; }
-      nav #box #search input {
-        width: 100%;
-        margin: 3px 0 0 -4px;
-        padding: 0;
-        color: #fff;
-        background: none;
-        border: none;
-        font-weight: bold;
-        line-height: 36px; }
-        nav #box #search input:focus {
-          outline: none; }
-    nav #box p {
-      color: #8B949E;
-      font-size: .9em;
-      padding-left: 2rem; }
-    nav #box a {
-      display: flex;
-      gap: .5rem;
-      width: calc(100% - 5rem);
-      font-weight: bolder;
-      color: #fff;
-      padding: .6rem 2.5rem;
-      text-decoration: none; }
-      nav #box a:hover, nav #box a:focus {
-        outline: none;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 7px; }
-      nav #box a:last-of-type {
-        padding: .6rem 2.3rem;
-        gap: .8rem; }
-      nav #box a i {
-        padding-top: .1rem; }
-      nav #box a .org {
-        margin-left: -.3em; }
+      margin: 2px 0 0 -4px;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: none;
+      border: none;
+      line-height: 36px; }
+      nav #search input:focus {
+        outline: none; }
+  nav #entries p {
+    font-size: .9em;
+    margin-left: .5rem; }
+  nav #entries a {
+    display: flex;
+    gap: .5rem;
+    width: calc(100% - 5rem);
+    padding: .6rem 2.5rem;
+    text-decoration: none; }
+  nav #entries .fa-bag-shopping {
+    margin-right: 2px; }
+  nav #entries .fa-code-branch,
+  nav #entries .fa-linkedin-in {
+    margin-right: 3px; }
+  nav #entries .fa-user-group {
+    margin-left: -4px;
+    margin-right: 1px; }
+  nav #entries .fa-envelope {
+    margin-left: -3px;
+    margin-right: 4px; }
+  nav #entries .fa-house,
+  nav #entries .fa-people-group {
+    margin-left: -2px; }
 
 #offer {
-  height: 100vh; }
+  min-height: 100vh; }
   #offer #box {
     display: flex;
-    text-align: center;
     gap: 2rem; }
     #offer #box div {
       width: 20rem;
       height: 20rem;
-      border-radius: 1rem;
+      border-radius: 8px;
+      text-align: center;
       transition: 3s;
-      border: solid 1px #000; }
-      #offer #box div h1 {
+      border: solid 1px;
+      padding: 20px; }
+      #offer #box div .header {
         font-size: 3em; }
       #offer #box div .category {
         color: #333;
-        font-size: .9em;
-        font-weight: bold;
-        margin: 0; }
+        width: 100%;
+        font-size: 1em; }
       #offer #box div .text {
-        margin: 0;
-        font-size: 2em;
-        font-weight: bold;
-        margin: auto;
-        width: calc(100% - 4rem); }
+        font-size: 2em; }
       #offer #box div button {
-        width: 80%;
-        background: none;
-        font-size: 1.2em;
-        font-weight: bold;
+        width: calc(100% - 3rem);
+        font-size: 1.1em;
         height: 3rem;
-        border: solid 1px #000;
-        color: #000;
-        border-radius: .7rem;
-        margin: 3rem 0; }
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 8px; }
         #offer #box div button:hover {
           cursor: pointer;
           transform: scale(1.05);
           background: rgba(255, 255, 255, 0.1); }
 
-.fa-bag-shopping {
-  margin-right: 2px; }
+#about {
+  font-family: 'Beau Rivage', cursive;
+  font-size: 2.5em;
+  line-height: 1.5; }
+  #about p {
+    width: 500px;
+    text-align: justify; }
+    #about p a {
+      text-decoration: none;
+      font-weight: bold; }
+      #about p a:hover {
+        text-decoration: 2px underline; }
 
-.fa-code-branch,
-.fa-linkedin-in {
-  margin-right: 3px; }
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 1s ease-out !important; }
 
-.fa-user-group {
-  margin-left: -4px;
-  margin-right: 1px; }
-
-.fa-house,
-.fa-people-group {
-  margin-left: -2px; }
+.active {
+  transform: translateY(0);
+  opacity: 1; }
 
 @media (max-width: 1100px) {
   #nav-btn-parent {
@@ -264,8 +333,6 @@ nav {
     flex-direction: column; }
   #offer {
     height: auto; }
-    #offer #box {
-      transform: scale(0.7); }
   #home img {
     max-width: 70%;
     max-width: 350px; }
@@ -273,15 +340,26 @@ nav {
     text-align: center;
     font-size: clamp(16px, 20vw, 7em); }
   nav #box {
-    width: 70vw; }
+    width: 70vw;
+    text-align: center;
+    justify-content: center; }
     nav #box #search {
-      width: calc(100% - 2rem);
-      margin-left: 2rem; }
+      display: none; }
     nav #box #entries {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       max-height: 80%;
       overflow-x: auto; }
+      nav #box #entries a {
+        width: auto; }
   #home div {
     margin-top: -2rem; }
+  #about {
+    font-size: 2em; }
+    #about p {
+      width: 90%; }
   .loader > h1 {
     font-size: 12vw; } }
 

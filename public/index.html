@@ -1,58 +1,92 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset='utf-8'>
-		<title> About me </title>
-		<link rel='stylesheet' href='stylesheets/style.css'>
+
+		<!-- General -->
+		<title>About me</title>
 		<link rel='icon' href='images/icon.png'>
+
+		<!-- Meta Tags-->
+		<meta charset='utf-8'>
+		<meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)">
+		<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="theme-color" content="#000000">
+		<meta name="description" content="
+				Hi everyone, I am Kacper 'fenze' Fiedorowicz. Mainly I am working as Back-end Developer,
+				with few exceptions. This is my portfolio website, where you can meet me and find how
+				to catch me.
+		">
+
+		<!-- Styles -->
+		<link rel='stylesheet' href='stylesheets/style.css'>
+
+		<!-- Libraries -->
 		<script src='https://kit.fontawesome.com/246702ad8c.js' crossorigin='anonymous'></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script defer src='scripts/loader.js'></script>
+
+		<!-- Scripts -->
+		<script src='scripts/preload.js'></script>
+		<script defer src='scripts/main.js'></script>
+		<script defer src='scripts/search.js'></script>
+		<script defer src='scripts/mouse.js'></script>
+		<script defer src='scripts/keybinds.js'></script>
 	</head>
 	<body>
-
-		<div id='nav-btn-parent'>
-			<div id='click'>
-					<div id='nav-btn'></div>
-			</div>
-			<div id='menu'>
-				<i id="theme-btn" class="fa-solid fa-moon"></i>
-				<a id="nav-home" title="Strona tytułowa" href="#home">HOME</a>
-				<a id="nav-offer" title="Co oferuję" href="#offer">OFFER</a>
-				<a id="nav-about" title="Więcej o mnie" href="#about">ABOUT</a>
-			</div>
-		</div>
 
 		<div class='loader'>
 			<h1>fenze</hi>
 		</div>
 
+		<!-- Navigation bar -->
+		<div id='nav-btn-parent'>
+
+			<!--
+				Clickable parent of view fullscreen navigation button,
+			  and inside a button
+			-->
+			<div id='burger-box'>
+					<div id='burger'></div>
+			</div>
+
+			<!-- Classic navigation on the right -->
+			<div id='menu'>
+				<a id="nav-home" title="Home page" href="#home">HOME</a>
+				<a id="nav-offer" title="Offer" href="#offer">OFFER</a>
+				<a id="nav-about" title="About me" href="#about">ABOUT</a>
+			</div>
+		</div>
+
+		<!-- Fullscreen navigation bar with features like fuzzy search -->
 		<nav>
+			<!-- Search -->
 			<div id='box'>
 				<div id='search'>
 					<i class="fa-solid fa-magnifying-glass"></i>
 					<input placeholder='Search'>
 				</div>
+
+				<!-- List of links and icons -->
 				<div id='entries'>
 					<p> Navigation </p>
+
 					<a class='search-element' href='#home' onclick='menu.click()'>
 						<i class="fa-solid fa-house"></i> Home </a>
 					<a class='search-element' href='#offer' onclick='menu.click()'>
 						<i class="fa-solid fa-bag-shopping"></i> Offer</a>
-
 					<a class='search-element' href='https://agency.fenze.dev'>
 						<i class="fa-solid fa-people-group"></i> Team </a>
 
 					<p> Social Media </p>
+
 					<a class='search-element' href='https://github.com/fenze'>
 						<i class="fa-brands fa-github"></i>Github</a>
 					<a class='search-element' href='https://github.com/fenze'>
 						<i class="fa-brands fa-twitter"></i>Twitter</a>
 					<a class='search-element' href='https://www.linkedin.com/in/kacper-fiedorowicz-9ba8b522a/'>
 						<i class="fa-brands fa-linkedin-in"></i>Linkedin</a>
+
 					<p class='search-categories'> Other </p>
+
 					<a class='search-element' href='https://github.com/fenze?tab=repositories'>
 						<i class="fa-solid fa-code-branch"></i>Repositories</a>
 					<a class='search-element org' href='https://github.com/mini-rose'>
@@ -63,10 +97,11 @@
 			</div>
 		</nav>
 
+		<!-- Home page -->
 		<section id='home'>
 			<img src='images/memoji.png'>
 			<div>
-				<h1> fenze </h1>
+				<h1>fenze</h1>
 				<p>I’m a Software Engineer with over 4 years of coding experience.
 					 I’m particularly interested in data modelling, system design, distributed systems,
 					 cloud computing, and backend development. <a href="#offer">See more</a>.</p>
@@ -75,7 +110,7 @@
 		<section id='offer'>
 			<div id='box'>
 				<div class="reveal">
-					<h1> <i class="fa-solid fa-earth-americas"></i> FRONT </h1>
+					<p class='header'> <i class="fa-solid fa-earth-americas"></i> FRONT </p>
 					<p class='category'> Technologies </p>
 					<p class='text'>
 						<i class="fa-brands fa-html5"></i>
@@ -84,12 +119,14 @@
 						<i class="fa-brands fa-js"></i>
 					</p>
 					<a href='https://github.com/fenze?tab=repositories&q=&type=&language=css'>
-						<button> See projects </button>
+						<button>
+							See projects →
+						</button>
 					</a>
 				</div>
 
 				<div class="reveal">
-					<h1> <i class="fa-solid fa-server"></i> BACK </h1>
+					<p class='header'> <i class="fa-solid fa-server"></i> BACK </p>
 					<p class='category'> Technologies </p>
 					<p class='text'>
 						<i class="fa-brands fa-git-alt"></i>
@@ -99,12 +136,14 @@
 						<i class="fa-brands fa-golang"></i>
 					</p>
 					<a href='https://github.com/fenze?tab=repositories&q=&type=&language=python&sort='>
-						<button> See projects </button>
+						<button>
+							See projects →
+						</button>
 					</a>
 				</div>
 
 				<div class="reveal">
-					<h1> <i class="fa-solid fa-star"></i> OTHER </h1>
+					<p class='header'> <i class="fa-solid fa-star"></i> OTHER </p>
 					<p class='category'> Technologies </p>
 					<p class='text'>
 						<i class="fa-brands fa-linux"></i>
@@ -112,10 +151,25 @@
 						SH
 					</p>
 					<a href='https://github.com/fenze?tab=repositories&q=&type=&language=shell&sort='>
-						<button> See projects </button>
+						<button>
+							See projects →
+						</button>
 					</a>
 				</div>
 			</div>
+		</section>
+
+		<section id='about'>
+			<p class='reveal'>
+				I seriously started my coding adventure when I got into high school
+				with a technician programmer profile, I was mainly
+				interested in python and javascript. Over the years I have gained skills
+				that allow me to do what I love, from building the look of my linux
+				to automating tasks with shell script and c.
+				Some of my projects are open and appear on my <a href='https://github.com/fenze'>github</a> profile.
+				If you are interested in contacting me with questions,
+				please do not hesitate to contact me by <a href='mailto:contact@fenze.dev'>e-mail</a>!
+			</p>
 		</section>
 	</body>
 </html>
