@@ -187,7 +187,8 @@ section {
   width: 100vw; }
 
 #home img {
-  max-width: 350px; }
+  width: 350px;
+  height: 350px; }
 
 #home div {
   display: flex;
@@ -327,6 +328,8 @@ nav {
 @media (max-width: 1100px) {
   #nav-btn-parent {
     margin: 10vw 5vw; }
+  section {
+    width: 100vw; }
   section, #offer > div {
     flex-direction: column; }
   #offer {
@@ -360,6 +363,15 @@ nav {
       width: 90%; }
   .loader > h1 {
     font-size: 12vw; } }
+
+@media (max-width: 500px) {
+  #home div {
+    width: 87% !important; }
+  #offer {
+    padding: 200px 0; }
+    #offer div {
+      width: 87% !important;
+      min-width: 322px !important; } }
 
 html {
   scroll-behavior: smooth;
