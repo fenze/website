@@ -52,10 +52,10 @@ $(document).scroll(() => {
 
 		if (revealtop < windowheight - 600) {
 			for (s of sections) {
-				$(`#nav-${s}`).css('text-decoration', 'none')
+				$(`#nav-${s}`).css('font-weight', '')
 			}
 			if (sections.indexOf(section.id) >= 0)
-				$(`#nav-${section.id}`).css('text-decoration', 'underline 2px')
+				$(`#nav-${section.id}`).css('font-weight', 'bold')
 		}
 	}
 })

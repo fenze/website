@@ -8,8 +8,6 @@
     text-decoration-color: #FFF; }
     body a {
       color: #FFF; }
-      body a:hover {
-        color: #777; }
     body button {
       background: none;
       color: #FFF;
@@ -44,8 +42,6 @@
     text-decoration-color: #000; }
     body a {
       color: #000 !important; }
-      body a:hover {
-        color: #777; }
     body nav a {
       color: #FFF !important; }
     body button {
@@ -75,8 +71,6 @@
   text-decoration-color: #FFF; }
   .dark body a {
     color: #FFF; }
-    .dark body a:hover {
-      color: #777; }
   .dark body button {
     background: none;
     color: #FFF;
@@ -138,6 +132,8 @@ body {
       text-decoration: none;
       text-underline-offset: .3rem;
       margin: 10px; }
+      #nav-btn-parent #menu a:hover, #nav-btn-parent #menu a:focus {
+        font-weight: bold; }
   #nav-btn-parent #burger {
     position: fixed;
     height: 3px;
@@ -256,6 +252,8 @@ nav {
     width: calc(100% - 5rem);
     padding: .6rem 2.5rem;
     text-decoration: none; }
+    nav #entries a:hover, nav #entries a:focus {
+      font-weight: bold; }
   nav #entries .fa-bag-shopping {
     margin-right: 2px; }
   nav #entries .fa-code-branch,
@@ -283,7 +281,7 @@ nav {
       text-align: center;
       transition: 3s;
       border: solid 1px;
-      padding: 20px; }
+      padding: 40px; }
       #offer #box div .header {
         font-size: 3em; }
       #offer #box div .category {
@@ -295,7 +293,7 @@ nav {
       #offer #box div button {
         width: calc(100% - 3rem);
         font-size: 1.1em;
-        height: 3rem;
+        height: 4rem;
         font-family: 'Montserrat', sans-serif;
         border-radius: 8px; }
         #offer #box div button:hover {

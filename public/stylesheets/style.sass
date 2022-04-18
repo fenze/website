@@ -10,8 +10,6 @@
 
     a
       color: #FFF
-      &:hover
-        color: #777
 
     button
       background: none
@@ -59,8 +57,6 @@
 
     a
       color: #000 !important
-      &:hover
-        color: #777
 
     nav
       a
@@ -139,6 +135,8 @@ body
       text-decoration: none
       text-underline-offset: .3rem
       margin: 10px
+      &:hover, &:focus
+        font-weight: bold
 
   #burger
     position: fixed
@@ -266,6 +264,8 @@ nav
       width: calc(100% - 5rem)
       padding: .6rem 2.5rem
       text-decoration: none
+      &:hover, &:focus
+        font-weight: bold
     .fa-bag-shopping
       margin-right: 2px
     .fa-code-branch,
@@ -295,7 +295,7 @@ nav
       text-align: center
       transition: 3s
       border: solid 1px
-      padding: 20px
+      padding: 40px
 
       .header
         font-size: 3em
@@ -311,7 +311,7 @@ nav
       button
         width: calc(100% - 3rem)
         font-size: 1.1em
-        height: 3rem
+        height: 4rem
         font-family: 'Montserrat', sans-serif
         border-radius: 8px
         &:hover
