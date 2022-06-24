@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap');
 
 @mixin dark_scheme
   body
@@ -48,6 +47,10 @@
       color: #FFF
 
 
+  ::-webkit-scrollbar-thumb
+    background: #FFF
+
+
 @mixin light_scheme
   body
     background: #FFF
@@ -85,6 +88,9 @@
 
     .loader
       background: #FFF
+
+  ::-webkit-scrollbar-thumb
+    background: #000
 
 
 @media (prefers-color-scheme: dark)
@@ -132,11 +138,12 @@ body
     position: fixed
     right: 20px
     a
+      opacity: 0.7
       text-decoration: none
       text-underline-offset: .3rem
       margin: 10px
       &:hover, &:focus
-        font-weight: bold
+        opacity: 1
 
   #burger
     position: fixed
@@ -258,15 +265,17 @@ nav
   #entries
     p
       font-size: .9em
+      color: #666
       margin-left: .5rem
     a
       display: flex
       gap: .5rem
+      opacity: 0.8
       width: calc(100% - 5rem)
       padding: .6rem 2.5rem
       text-decoration: none
       &:hover, &:focus
-        font-weight: bold
+        opacity: 1
     .fa-bag-shopping
       margin-right: 2px
     .fa-code-branch,
@@ -285,6 +294,7 @@ nav
 
 #offer
   min-height: 100vh
+  padding: 10vh 0;
   #box
     display: flex
     gap: 2rem
@@ -319,19 +329,6 @@ nav
           cursor: pointer
           transform: scale(1.05)
           background: transparentize(#fff, 0.9)
-
-#about
-  font-family: 'Beau Rivage', cursive
-  font-size: 2.5em
-  line-height: 1.5
-  p
-    width: 500px
-    text-align: justify
-    a
-      text-decoration: none
-      font-weight: bold
-      &:hover
-        text-decoration: 2px underline
 
 .reveal
   position: relative
@@ -388,11 +385,6 @@ nav
     div
       margin-top: -2rem
 
-  #about
-    font-size: 2em
-    p
-      width: 90%
-
   .loader > h1
     font-size: 12vw
 
@@ -401,17 +393,11 @@ nav
     div
       width: 87% !important
 
-  #offer
-    padding: 200px 0
-    div
-      width: 87% !important
-      min-width: 322px !important
-
 // Smooth scrollinG
 html
   scroll-behavior: smooth
   -webkit-overflow-scrolling: touch
-
+  overflow-x: hidden
 
 // Lock drag and select
 *
@@ -423,10 +409,12 @@ html
   -webkit-user-drag: none
   user-drag: none
 
-
-// TODO: Create scrollbar
+/* Chrome, Edge and Safari */
 ::-webkit-scrollbar
-  width: 0
+  width: 10px
+
+::-webkit-scrollbar-track
+  border-radius: 5px
 
 // Fixes zoom at focusing on ios
 @media (-webkit-min-device-pixel-ratio:0)

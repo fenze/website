@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
 @media (prefers-color-scheme: dark) {
   body {
     background: #000;
@@ -32,7 +31,9 @@
           color: #FFF; }
     body .loader {
       background: #000;
-      color: #FFF; } }
+      color: #FFF; }
+  ::-webkit-scrollbar-thumb {
+    background: #FFF; } }
 
 @media (prefers-color-scheme: light) {
   body {
@@ -62,7 +63,9 @@
         body nav #box #entries a {
           color: #000 !important; }
     body .loader {
-      background: #FFF; } }
+      background: #FFF; }
+  ::-webkit-scrollbar-thumb {
+    background: #000; } }
 
 .dark body {
   background: #000;
@@ -97,6 +100,9 @@
     background: #000;
     color: #FFF; }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #FFF; }
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -129,11 +135,12 @@ body {
     position: fixed;
     right: 20px; }
     #nav-btn-parent #menu a {
+      opacity: 0.7;
       text-decoration: none;
       text-underline-offset: .3rem;
       margin: 10px; }
       #nav-btn-parent #menu a:hover, #nav-btn-parent #menu a:focus {
-        font-weight: bold; }
+        opacity: 1; }
   #nav-btn-parent #burger {
     position: fixed;
     height: 3px;
@@ -246,15 +253,17 @@ nav {
         outline: none; }
   nav #entries p {
     font-size: .9em;
+    color: #666;
     margin-left: .5rem; }
   nav #entries a {
     display: flex;
     gap: .5rem;
+    opacity: 0.8;
     width: calc(100% - 5rem);
     padding: .6rem 2.5rem;
     text-decoration: none; }
     nav #entries a:hover, nav #entries a:focus {
-      font-weight: bold; }
+      opacity: 1; }
   nav #entries .fa-bag-shopping {
     margin-right: 2px; }
   nav #entries .fa-code-branch,
@@ -271,7 +280,8 @@ nav {
     margin-left: -2px; }
 
 #offer {
-  min-height: 100vh; }
+  min-height: 100vh;
+  padding: 10vh 0; }
   #offer #box {
     display: flex;
     gap: 2rem; }
@@ -301,19 +311,6 @@ nav {
           cursor: pointer;
           transform: scale(1.05);
           background: rgba(255, 255, 255, 0.1); }
-
-#about {
-  font-family: 'Beau Rivage', cursive;
-  font-size: 2.5em;
-  line-height: 1.5; }
-  #about p {
-    width: 500px;
-    text-align: justify; }
-    #about p a {
-      text-decoration: none;
-      font-weight: bold; }
-      #about p a:hover {
-        text-decoration: 2px underline; }
 
 .reveal {
   position: relative;
@@ -357,25 +354,17 @@ nav {
         width: auto; }
   #home div {
     margin-top: -2rem; }
-  #about {
-    font-size: 2em; }
-    #about p {
-      width: 90%; }
   .loader > h1 {
     font-size: 12vw; } }
 
 @media (max-width: 500px) {
   #home div {
-    width: 87% !important; }
-  #offer {
-    padding: 200px 0; }
-    #offer div {
-      width: 87% !important;
-      min-width: 322px !important; } }
+    width: 87% !important; } }
 
 html {
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
 
 * {
   -webkit-user-select: none;
@@ -386,8 +375,12 @@ html {
   -webkit-user-drag: none;
   user-drag: none; }
 
+/* Chrome, Edge and Safari */
 ::-webkit-scrollbar {
-  width: 0; }
+  width: 10px; }
+
+::-webkit-scrollbar-track {
+  border-radius: 5px; }
 
 @media (-webkit-min-device-pixel-ratio: 0) {
   select, textarea, input {

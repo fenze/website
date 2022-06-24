@@ -27,6 +27,7 @@ const toggle_nav = () => {
 	}
 
 	document.body.style = ''
+	menu.parent().css('background', '')
 	menu_parent.css('transition', '')
 	menu.css('opacity', '')
 	burger.removeClass('nav-close')
@@ -52,10 +53,10 @@ $(document).scroll(() => {
 
 		if (revealtop < windowheight - 600) {
 			for (s of sections) {
-				$(`#nav-${s}`).css('font-weight', '')
+				$(`#nav-${s}`).css('opacity', '')
 			}
 			if (sections.indexOf(section.id) >= 0)
-				$(`#nav-${section.id}`).css('font-weight', 'bold')
+				$(`#nav-${section.id}`).css('opacity', '1')
 		}
 	}
 })
