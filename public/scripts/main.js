@@ -8,14 +8,16 @@
 const toggle_nav = () => {
 	let burger = $('#burger'),
 			menu = $("#menu"),
-			menu_parent = menu.parent()
+			menu_parent = $("#nav-btn-parent"),
 			search = $('#search > input'),
 			nav = $('nav')
 
-	menu_parent.css('transition', '0ms')
+	menu_parent.css('transition', '0ms !important')
 
 	if (nav.css('display') == 'none') {
-		menu.parent().css('background', 'none')
+		menu_parent.css('border-bottom', 'none')
+		menu_parent.css('backdrop-filter', 'none')
+		menu_parent.css('box-shadow', 'none')
 		burger.addClass('nav-close')
 		nav.css('display', 'flex')
 		menu.css('opacity', '0')
@@ -27,7 +29,11 @@ const toggle_nav = () => {
 	}
 
 	document.body.style = ''
-	menu.parent().css('background', '')
+	menu_parent.css('border-bottom', '')
+	menu_parent.css('backdrop-filter', '')
+	menu_parent.css('box-shadow', '')
+	burger.addClass('nav-close')
+	menu_parent.css('back-drop', '')
 	menu_parent.css('transition', '')
 	menu.css('opacity', '')
 	burger.removeClass('nav-close')
@@ -47,7 +53,7 @@ $(document).scroll(() => {
 		}
 	}
 
-	const sections = ['home', 'offer', 'about']
+	const sections = ['home', 'about']
 	for (section of $('section')) {
 		let revealtop = section.getBoundingClientRect().top
 

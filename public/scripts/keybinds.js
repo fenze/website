@@ -33,7 +33,6 @@
 	$('nav').keyup(key => {
 		let list = $('#entries > a').filter(':visible')
 
-		console.log(key.code)
 		if (key.code == "ArrowDown") {
 			(i != list.lenght - 1) ? i++ : null
 

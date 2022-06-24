@@ -1,112 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #000;
-    color: #FFF;
-    border-color: #FFF;
-    text-decoration-color: #FFF; }
-    body a {
-      color: #FFF; }
-    body button {
-      background: none;
-      color: #FFF;
-      border: solid 1px #FFF; }
-    body #nav-btn-parent {
-      background: rgba(0, 0, 0, 0.8); }
-      body #nav-btn-parent #burger {
-        background: #FFF; }
-        body #nav-btn-parent #burger:before, body #nav-btn-parent #burger:after {
-          background: #FFF; }
-    body #home div a {
-      color: #FFF; }
-    body #offer #box > div .category {
-      color: #FFF; }
-    body nav {
-      background: rgba(0, 0, 0, 0.6) !important; }
-      body nav #box {
-        width: 400px; }
-        body nav #box #search {
-          background: rgba(255, 255, 255, 0.1); }
-        body nav #box #entries a {
-          color: #FFF; }
-    body .loader {
-      background: #000;
-      color: #FFF; }
-  ::-webkit-scrollbar-thumb {
-    background: #FFF; } }
-
-@media (prefers-color-scheme: light) {
-  body {
-    background: #FFF;
-    color: #000;
-    border-color: #000;
-    text-decoration-color: #000; }
-    body a {
-      color: #000 !important; }
-    body nav a {
-      color: #FFF !important; }
-    body button {
-      background: none;
-      border: solid 1px #000; }
-    body #nav-btn-parent {
-      background: rgba(255, 255, 255, 0.8); }
-      body #nav-btn-parent #burger {
-        background: #000; }
-        body #nav-btn-parent #burger:before, body #nav-btn-parent #burger:after {
-          background: #000; }
-    body nav {
-      background: rgba(255, 255, 255, 0.6) !important; }
-      body nav #box {
-        width: 400px; }
-        body nav #box #search {
-          background: rgba(0, 0, 0, 0.1); }
-        body nav #box #entries a {
-          color: #000 !important; }
-    body .loader {
-      background: #FFF; }
-  ::-webkit-scrollbar-thumb {
-    background: #000; } }
-
-.dark body {
-  background: #000;
-  color: #FFF;
-  border-color: #FFF;
-  text-decoration-color: #FFF; }
-  .dark body a {
-    color: #FFF; }
-  .dark body button {
-    background: none;
-    color: #FFF;
-    border: solid 1px #FFF; }
-  .dark body #nav-btn-parent {
-    background: rgba(0, 0, 0, 0.8); }
-    .dark body #nav-btn-parent #burger {
-      background: #FFF; }
-      .dark body #nav-btn-parent #burger:before, .dark body #nav-btn-parent #burger:after {
-        background: #FFF; }
-  .dark body #home div a {
-    color: #FFF; }
-  .dark body #offer #box > div .category {
-    color: #FFF; }
-  .dark body nav {
-    background: rgba(0, 0, 0, 0.6) !important; }
-    .dark body nav #box {
-      width: 400px; }
-      .dark body nav #box #search {
-        background: rgba(255, 255, 255, 0.1); }
-      .dark body nav #box #entries a {
-        color: #FFF; }
-  .dark body .loader {
-    background: #000;
-    color: #FFF; }
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #FFF; }
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  transition: 500ms; }
+  transition: 500ms;
+  background: #000; }
+
+#bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1; }
 
 #nav-btn-parent {
   display: flex;
@@ -117,10 +20,11 @@ body {
   width: 100%;
   margin: 0 !important;
   padding: 0;
-  transition: 500ms;
   z-index: 98;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px); }
+  border-bottom: 1px solid #444;
+  box-shadow: inset 0 -2px 2px -2px #000;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px); }
   #nav-btn-parent #burger-box {
     display: flex;
     align-items: center;
@@ -131,27 +35,36 @@ body {
     left: 0; }
     #nav-btn-parent #burger-box:hover {
       cursor: pointer; }
+    #nav-btn-parent #burger-box:hover > #burger {
+      opacity: 1; }
   #nav-btn-parent #menu {
     position: fixed;
-    right: 20px; }
+    margin: auto;
+    padding-top: 5px; }
     #nav-btn-parent #menu a {
       opacity: 0.7;
       text-decoration: none;
+      font-weight: bolder;
+      color: white;
       text-underline-offset: .3rem;
+      transition: 200ms;
       margin: 10px; }
       #nav-btn-parent #menu a:hover, #nav-btn-parent #menu a:focus {
         opacity: 1; }
   #nav-btn-parent #burger {
     position: fixed;
     height: 3px;
+    opacity: 0.7;
+    background: #cdd6f4;
     width: 40px;
     display: block;
-    left: 20px;
+    left: 25px;
     border-radius: 7px;
     transition: 200ms; }
     #nav-btn-parent #burger:before, #nav-btn-parent #burger:after {
       content: '';
       position: absolute;
+      background: #cdd6f4;
       height: 3px;
       width: 40px;
       border-radius: 7px;
@@ -177,9 +90,12 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  color: #000;
+  color: #cdd6f4;
+  background: rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  z-index: 99; }
+  z-index: 99;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px); }
   .loader h1 {
     overflow: hidden;
     font-size: 10vw;
@@ -202,13 +118,22 @@ section {
   flex-direction: column;
   align-items: left;
   width: 400px;
-  line-height: 1.5; }
+  color: #cdd6f4 !important;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+  line-height: 1.5;
+  text-align: justify;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px); }
   #home div p {
-    padding-left: .5rem; }
+    padding-left: .5rem;
+    width: 95%; }
   #home div a {
     text-decoration: none;
     font-weight: bold;
-    color: #000; }
+    color: #cdd6f4 !important; }
     #home div a:hover, #home div a:focus {
       outline: none;
       text-decoration: underline wavy;
@@ -217,16 +142,19 @@ section {
   #home div h1, #home div p {
     margin: 0; }
   #home div h1 {
-    line-height: 7rem;
-    font-size: 7em; }
+    line-height: 6rem;
+    font-size: 6em;
+    margin-left: 5px; }
 
 nav {
   position: fixed;
   display: none;
   justify-content: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
+  color: #cdd6f4;
   z-index: 97;
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px); }
@@ -236,6 +164,8 @@ nav {
     align-items: center;
     width: 100%;
     height: 3rem;
+    background: rgba(205, 214, 244, 0.06);
+    border: 1px solid #444;
     margin-top: 2rem;
     border-radius: 10px;
     transition: .5s; }
@@ -248,6 +178,7 @@ nav {
       font-family: 'Montserrat', sans-serif;
       background: none;
       border: none;
+      color: #cdd6f4;
       line-height: 36px; }
       nav #search input:focus {
         outline: none; }
@@ -256,14 +187,15 @@ nav {
     color: #666;
     margin-left: .5rem; }
   nav #entries a {
-    display: flex;
     gap: .5rem;
     opacity: 0.8;
-    width: calc(100% - 5rem);
-    padding: .6rem 2.5rem;
+    padding: .6rem 1.5rem;
+    margin: auto;
+    color: #cdd6f4;
     text-decoration: none; }
     nav #entries a:hover, nav #entries a:focus {
-      opacity: 1; }
+      opacity: 1;
+      outline: none; }
   nav #entries .fa-bag-shopping {
     margin-right: 2px; }
   nav #entries .fa-code-branch,
@@ -278,39 +210,6 @@ nav {
   nav #entries .fa-house,
   nav #entries .fa-people-group {
     margin-left: -2px; }
-
-#offer {
-  min-height: 100vh;
-  padding: 10vh 0; }
-  #offer #box {
-    display: flex;
-    gap: 2rem; }
-    #offer #box div {
-      width: 20rem;
-      height: 20rem;
-      border-radius: 8px;
-      text-align: center;
-      transition: 3s;
-      border: solid 1px;
-      padding: 40px; }
-      #offer #box div .header {
-        font-size: 3em; }
-      #offer #box div .category {
-        color: #333;
-        width: 100%;
-        font-size: 1em; }
-      #offer #box div .text {
-        font-size: 2em; }
-      #offer #box div button {
-        width: calc(100% - 3rem);
-        font-size: 1.1em;
-        height: 4rem;
-        font-family: 'Montserrat', sans-serif;
-        border-radius: 8px; }
-        #offer #box div button:hover {
-          cursor: pointer;
-          transform: scale(1.05);
-          background: rgba(255, 255, 255, 0.1); }
 
 .reveal {
   position: relative;
@@ -375,12 +274,8 @@ html {
   -webkit-user-drag: none;
   user-drag: none; }
 
-/* Chrome, Edge and Safari */
 ::-webkit-scrollbar {
-  width: 10px; }
-
-::-webkit-scrollbar-track {
-  border-radius: 5px; }
+  width: 0; }
 
 @media (-webkit-min-device-pixel-ratio: 0) {
   select, textarea, input {
