@@ -15,12 +15,9 @@ const toggle_nav = () => {
 	menu_parent.css('transition', '0ms !important')
 
 	if (nav.css('display') == 'none') {
-		menu_parent.css('border-bottom', 'none')
-		menu_parent.css('backdrop-filter', 'none')
-		menu_parent.css('box-shadow', 'none')
 		burger.addClass('nav-close')
 		nav.css('display', 'flex')
-		menu.css('opacity', '0')
+		nav.css('left', '0')
 		document.body.style.overflow = 'hidden'
 		i = -1
 		search.val('').focus()
@@ -29,9 +26,6 @@ const toggle_nav = () => {
 	}
 
 	document.body.style = ''
-	menu_parent.css('border-bottom', '')
-	menu_parent.css('backdrop-filter', '')
-	menu_parent.css('box-shadow', '')
 	burger.addClass('nav-close')
 	menu_parent.css('back-drop', '')
 	menu_parent.css('transition', '')

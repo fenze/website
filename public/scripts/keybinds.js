@@ -34,7 +34,9 @@
 		let list = $('#entries > a').filter(':visible')
 
 		if (key.code == "ArrowDown") {
-			(i != list.lenght - 1) ? i++ : null
+			if (i++ == list.lenght) return
+			console.log(list.length)
+			console.log(i)
 
 			list[i].focus()
 			return
