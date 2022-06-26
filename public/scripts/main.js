@@ -53,7 +53,7 @@ $(document).scroll(() => {
 		}
 	}
 
-	const sections = ['home', 'about']
+	const sections = ['home', 'portfolio']
 	for (section of $('section')) {
 		let revealtop = section.getBoundingClientRect().top
 
