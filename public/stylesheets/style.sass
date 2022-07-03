@@ -13,9 +13,7 @@ body
 
 #bg
   position: fixed
-  width: 100vw
-  right: 0
-  bottom: 0
+  width: calc(100% + 15px)
   z-index: -1
 
 #nav-btn-parent
@@ -25,7 +23,7 @@ body
   width: 100%
   margin: 0 !important
   padding: 0
-  z-index: 98
+  z-index: 10
   border-bottom: 1px solid #444
   box-shadow: inset 0 -2px 2px -2px #000
   -webkit-backdrop-filter: blur(40px)
@@ -156,12 +154,11 @@ section
 
 nav
   position: fixed
-  display: none
   justify-content: center
+  display: none
   align-items: center
   box-shadow: inset 0px 0px 2px 1px transparentize(#000, 0.75)
   top: 50%
-  left: -50%
   transform: translateY(-50%)
   padding: 2rem
   border: 1px solid #444
@@ -209,13 +206,13 @@ nav
       margin-left: .5rem
     a
       gap: .5rem
-      opacity: 0.8
       padding: .6rem 1.5rem
+      font-size: 1em
       margin: auto
-      color: #cdd6f4
+      color: #9ca9d7
       text-decoration: none
       &:hover, &:focus
-        opacity: 1
+        color: #cdd6f4
         outline: none
 
     .fa-bag-shopping
@@ -317,8 +314,8 @@ footer
 // Smooth scrolling
 html
   scroll-behavior: smooth
-  -webkit-overflow-scrolling: touch
-  overflow-x: hidden
+  overflow: overlay
+  text-rendering: optimizeSpeed
 
 // Lock drag and select
 *
@@ -326,12 +323,21 @@ html
   -moz-user-select: none
   -ms-user-select: none
   user-select: none
-  -webkit-touch-callout: none
   -webkit-user-drag: none
-  user-drag: none
 
 ::-webkit-scrollbar
-  width: 0
+  width: 10px
+
+::-webkit-scrollbar-track
+  margin-top: 90px
+  margin-bottom: 90px
+
+::-webkit-scrollbar-thumb
+  border-radius: 20px
+  background: transparentize(#cdd6f4, 0.5)
+  backdrop-filter: blur(40px)
+  border: 1px solid #444
+  height: 50vh
 
 // Fixes zoom at focusing on ios
 @media (-webkit-min-device-pixel-ratio:0)

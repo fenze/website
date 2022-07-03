@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-
-		<!-- General -->
 		<title>About me</title>
 		<link rel='icon' href='images/icon.png'>
 
-		<!-- Meta Tags-->
 		<meta charset='utf-8'>
 		<meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)">
 		<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="
 				Hi everyone, I am Kacper 'fenze' Fiedorowicz. Mainly I am working as Back-end Developer,
 				with few exceptions. This is my portfolio website, where you can meet me and find how
 				to catch me.
 		">
 
-		<!-- Styles -->
 		<link rel='stylesheet' href='stylesheets/style.css'>
 
-		<!-- Libraries -->
 		<script src='https://kit.fontawesome.com/246702ad8c.js' crossorigin='anonymous'></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-		<!-- Scripts -->
 		<script src='scripts/preload.js'></script>
 		<script defer src='scripts/main.js'></script>
 		<script defer src='scripts/search.js'></script>
@@ -33,41 +27,27 @@
 	</head>
 	<body>
 
-		<video autoplay muted loop id="bg">
-			<source src="video/earth.mp4">
-		</video>
+		<video src="videos/earth.mp4" autoplay muted loop id="bg"></video>
 
 		<div class='loader'>
 			<h1>fenze</hi>
 		</div>
 
-		<!-- Navigation bar -->
 		<div id='nav-btn-parent'>
-
-			<!--
-				Clickable parent of view fullscreen navigation button,
-			  and inside a button
-			-->
 			<div id='burger-box'>
 					<div id='burger'></div>
 			</div>
-			<!-- Classic navigation -->
-			<div id='menu'>
-				<!-- <a id="nav-home" title="Home page" href="#home">HOME</a> -->
-				<!-- <a id="nav-portfolio" title="About page" href="#portfolio">PORTFOLIO</a> -->
-			</div>
 		</div>
 
-		<!-- Fullscreen navigation bar with features like fuzzy search -->
+
 		<nav>
-			<!-- Search -->
+
 			<div id='box'>
 				<div id='search'>
 					<i class="fa-solid fa-magnifying-glass"></i>
 					<input placeholder='Search' maxlength=12>
 				</div>
 
-				<!-- List of links and icons -->
 				<div id='entries'>
 					<p> Social Media </p>
 
@@ -90,9 +70,8 @@
 			</div>
 		</nav>
 
-		<!-- Home page -->
 		<section id='home'>
-			<img src='images/memoji.png'>
+			<img src='images/memoji.png' alt="fenze">
 			<div>
 				<h1>fenze</h1>
 				<p>I’m a Software Engineer with over 4 years of coding experience.
@@ -100,11 +79,6 @@
 					 cloud computing, and backend development. <a href="#about">See more</a>.</p>
 			</div>
 		</section>
-
-		<!-- <section id='portfolio'> -->
-			<!-- <div id='languages'> -->
-			<!-- </div> -->
-		<!-- </section> -->
 
 		<footer>
 			<p>
